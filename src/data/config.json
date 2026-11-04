@@ -829,7 +829,7 @@
       "id": "prod-065",
       "nombre": "Vestido largo halter marrón",
       "descripcion": "Vestido maxi en color marrón con cuello halter, aberturas laterales en la cintura y espalda descubierta. Un diseño sofisticado y atrevido.",
-      "precio": 49.9,
+      "precio": 4800.0,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/65.jpeg"],
       "destacado": true
@@ -838,10 +838,70 @@
       "id": "prod-066",
       "nombre": "Vestido largo halter lila",
       "descripcion": "Vestido maxi en color lila con cuello halter, aberturas laterales en la cintura y espalda descubierta. Un diseño sofisticado y atrevido.",
-      "precio": 49.9,
+      "precio": 4800.0,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/66.jpeg"],
       "destacado": true
+    },
+    {
+      "id": "prod-068",
+      "nombre": "Zapatillas con luces de Stitch No 6",
+      "descripcion": "Zapatillas deportivas infantiles en tonos rosa, blanco y azul claro con detalles de Stitch. Cuentan con luces LED en la suela y cierre de velcro para mayor comodidad No 6.",
+      "precio": 4000.0,
+      "categoria": "peques",
+      "tela": "Sintético",
+      "imagenes": ["/fotos/68.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-069",
+      "nombre": "Sandalias de agua negras y azules No 5/6",
+      "descripcion": "Sandalias tipo sandalias de agua en color negro con detalles en azul rey. Diseño cerrado en la punta y con velcro, ideales para la playa o el río  No 5/6.",
+      "precio": 1000.0,
+      "categoria": "peques",
+      "tela": "Goma EVA",
+      "imagenes": ["/fotos/69.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-070",
+      "nombre": "Sandalias blancas con flores No 5",
+      "descripcion": "Sandalias infantiles en color blanco con detalles de flores adornadas con pedrería en el velcro. Plantilla acolchada y suela flexible. No 5",
+      "precio": 1800.0,
+      "categoria": "peques",
+      "tela": "Sintético",
+      "imagenes": ["/fotos/70.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-071",
+      "nombre": "Sandalias holográficas con flores No 5",
+      "descripcion": "Sandalias con tiras holográficas en tonos iridiscentes y decoración de flores con brillo. Suela gruesa y texturizada para un mejor agarre No 5.",
+      "precio": 2300.0,
+      "categoria": "peques",
+      "tela": "Sintético",
+      "imagenes": ["/fotos/71.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-072",
+      "nombre": "Zapatos tipo bailarina brillantes No 5",
+      "descripcion": "Zapatos tipo bailarina en color dorado con acabado brillante y purpurina. Cuentan con una correa ajustable y un lazo decorativo en la parte trasera No 5.",
+      "precio": 4200,
+      "categoria": "peques",
+      "tela": "Sintético",
+      "imagenes": ["/fotos/72.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-073",
+      "nombre": "Zapatillas de malla rosas No 6",
+      "descripcion": "Zapatillas infantiles en color rosa palo con parte superior de malla transpirable. Detalle de osito en el velcro y suela de goma blanca antideslizante No 6.",
+      "precio": 2500.0,
+      "categoria": "peques",
+      "tela": "Malla",
+      "imagenes": ["/fotos/73.jpeg"],
+      "destacado": false
     }
   ]
 }

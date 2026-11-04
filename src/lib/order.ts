@@ -1,5 +1,6 @@
 import { formatearPrecio, redondear } from "@/lib/format";
 import { getProducto } from "@/lib/catalog";
+import { obtenerUrlHosting } from "@/lib/env";
 import type { CartItem, Producto } from "@/lib/types";
 
 export function obtenerLineasPedido(items: CartItem[]): Array<{
@@ -39,6 +40,7 @@ export function construirMensajePedido(
   simbolo: string,
   nombrePedido?: string,
 ): string {
+  const hosting = obtenerUrlHosting();
   const lineas = items.flatMap((item) => {
     const producto = getProducto(item.productoId);
 
@@ -47,8 +49,9 @@ export function construirMensajePedido(
     }
 
     const subtotal = formatearPrecio(producto.precio * item.cantidad, simbolo);
+    const url = construirUrlProducto(hosting, producto.id);
 
-    return [`- ${item.cantidad}x ${producto.nombre} — ${subtotal}`];
+    return [`- ${item.cantidad}x ${producto.nombre} — ${subtotal}\n  ${url}`];
   });
 
   const total = formatearPrecio(calcularTotal(items), simbolo);

@@ -281,7 +281,7 @@
       "categoria": "conjuntos",
       "imagenes": ["/fotos/8.jpeg"],
       "destacado": true,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-09",
@@ -716,7 +716,7 @@
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/52.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-053",
@@ -734,7 +734,8 @@
       "precio": 4600,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/54.jpeg"],
-      "destacado": false
+      "destacado": false,
+      "activo": false
     },
     {
       "id": "prod-055",
@@ -788,7 +789,8 @@
       "precio": 4500,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/60.jpeg"],
-      "destacado": true
+      "destacado": true,
+      "activo": false
     },
     {
       "id": "prod-061",

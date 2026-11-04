@@ -241,7 +241,7 @@
       "categoria": "conjuntos",
       "imagenes": ["/fotos/4.jpeg"],
       "destacado": false,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-05",
@@ -261,7 +261,7 @@
       "categoria": "conjuntos",
       "imagenes": ["/fotos/6.jpeg"],
       "destacado": false,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-07",

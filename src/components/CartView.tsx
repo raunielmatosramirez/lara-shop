@@ -2,8 +2,21 @@
 
 import Link from "next/link";
 import { useCart } from "@/components/CartProvider";
+import {
+  IconArrowLeft,
+  IconArrowRight,
+  IconBag,
+  IconCheck,
+  IconMinus,
+  IconPlus,
+  IconRuler,
+  IconTrash,
+  IconTruck,
+  IconWhatsApp,
+} from "@/components/Icons";
 import { tienda } from "@/lib/catalog";
-import { obtenerNumeroWhatsApp } from "@/lib/env";
+import { obtenerDireccionRecogida, obtenerNumeroWhatsApp } from "@/lib/env";
+import { abrirRecogida, abrirTarifas } from "@/lib/events";
 import { formatearPrecio } from "@/lib/format";
 import {
   calcularTotal,
@@ -17,6 +30,7 @@ export function CartView() {
   const lineas = obtenerLineasPedido(items);
   const total = calcularTotal(items);
   const numeroWhatsApp = obtenerNumeroWhatsApp();
+  const direccionRecogida = obtenerDireccionRecogida();
   const mensaje = construirMensajePedido(items, tienda.simboloMoneda);
   const enlacePedido = numeroWhatsApp
     ? construirEnlaceWhatsApp(numeroWhatsApp, mensaje)
@@ -25,7 +39,7 @@ export function CartView() {
   if (!hydrated) {
     return (
       <div
-        className='rounded-xl border border-black/10 bg-lc-blanco p-6 text-sm text-black/60'
+        className='rounded-xl bg-lc-blanco p-6 text-sm text-black/60'
         aria-busy='true'
         aria-live='polite'
       >
@@ -36,22 +50,26 @@ export function CartView() {
 
   if (lineas.length === 0) {
     return (
-      <div className='rounded-2xl border border-black/10 bg-lc-blanco px-6 py-12 text-center'>
-        <p className='text-[10px] font-semibold uppercase tracking-[0.2em] text-lc-rosa'>
+      <div className='relative overflow-hidden rounded-2xl bg-lc-blanco px-6 py-12 text-center'>
+        <span className='mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lc-rosa/10 text-lc-rosa'>
+          <IconBag className='h-7 w-7' />
+        </span>
+        <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-lc-rosa'>
           Carrito vacío
         </p>
         <h2 className='mt-2 text-xl font-bold tracking-tight sm:text-2xl'>
-          Todavía no has elegido tu camiseta
+          Todavía no has elegido tu look
         </h2>
         <p className='mx-auto mt-2 max-w-md text-xs leading-relaxed text-black/60 sm:text-sm'>
-          Explora el catálogo, elige tu talla y añade tus camisetas favoritas.
-          Después podrás enviar el pedido por WhatsApp.
+          Explora el catálogo y añade tus prendas favoritas. Después podrás
+          solicitar la reserva por WhatsApp.
         </p>
         <Link
           href='/catalogo'
-          className='mt-5 inline-flex min-h-10 items-center justify-center rounded-full bg-lc-verde px-5 text-sm font-semibold text-white transition-colors hover:bg-lc-verde/90'
+          className='mt-5 inline-flex min-h-10 items-center justify-center gap-2 rounded-full bg-lc-morado px-5 text-sm font-semibold text-white transition-colors hover:bg-lc-morado/90'
         >
           Ver catálogo
+          <IconArrowRight className='h-4 w-4' />
         </Link>
       </div>
     );
@@ -69,14 +87,14 @@ export function CartView() {
         <ul className='space-y-3'>
           {lineas.map(({ item, producto, subtotal }) => (
             <li
-              key={`${item.productoId}-${item.talla}-${item.dorsal}`}
-              className='rounded-xl border border-black/10 bg-white p-3 sm:p-4'
+              key={item.productoId}
+              className='rounded-xl bg-white p-3 sm:p-4'
             >
               <div className='flex gap-3'>
                 {/* Imagen compacta */}
                 <Link
                   href={`/producto/${producto.id}`}
-                  className='w-16 shrink-0 overflow-hidden rounded-lg border border-black/10 bg-white sm:w-20'
+                  className='w-16 shrink-0 overflow-hidden rounded-lg bg-white sm:w-20'
                   aria-label={`Ver ${producto.nombre}`}
                 >
                   <img
@@ -93,69 +111,45 @@ export function CartView() {
                     <h3 className='text-xs font-semibold leading-snug sm:text-sm'>
                       <Link
                         href={`/producto/${producto.id}`}
-                        className='line-clamp-2 transition-colors hover:text-lc-verde'
+                        className='line-clamp-2 transition-colors hover:text-lc-morado'
                       >
                         {producto.nombre}
                       </Link>
                     </h3>
                     <button
                       type='button'
-                      onClick={() =>
-                        eliminarItem(producto.id, item.talla, item.dorsal)
-                      }
+                      onClick={() => eliminarItem(producto.id)}
                       aria-label={`Eliminar ${producto.nombre} del carrito`}
                       className='shrink-0 rounded-full p-1 text-black/40 transition-colors hover:bg-lc-rosa/10 hover:text-lc-rosa'
                     >
-                      <svg
-                        aria-hidden='true'
-                        viewBox='0 0 24 24'
-                        fill='none'
-                        stroke='currentColor'
-                        strokeWidth='1.7'
-                        strokeLinecap='round'
-                        strokeLinejoin='round'
-                        className='h-4 w-4'
-                      >
-                        <path d='M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6' />
-                      </svg>
+                      <IconTrash className='h-4 w-4' />
                     </button>
                   </div>
 
-                  {/* Variantes: talla y dorsal en píldoras */}
+                  {/* Talla informativa */}
                   <div className='mt-1.5 flex flex-wrap gap-1'>
-                    {item.talla ? (
-                      <span className='inline-flex items-center rounded-full bg-lc-verde/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-lc-verde'>
-                        Talla {item.talla}
-                      </span>
-                    ) : null}
-                    {item.dorsal ? (
-                      <span className='inline-flex items-center rounded-full bg-lc-rosa/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-lc-rosa'>
-                        Dorsal {item.dorsal}
-                      </span>
-                    ) : null}
+                    <span className='inline-flex items-center gap-1 rounded-full bg-lc-morado/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-lc-morado'>
+                      <IconRuler className='h-3 w-3' />
+                      Talla única · XS a M
+                    </span>
                   </div>
 
                   {/* Cantidad + subtotal */}
                   <div className='mt-2.5 flex flex-wrap items-center justify-between gap-2'>
-                    <div className='inline-flex items-center rounded-full border border-black/15 bg-white'>
+                    <div className='inline-flex items-center rounded-full bg-white'>
                       <button
                         type='button'
                         onClick={() =>
-                          actualizarCantidad(
-                            producto.id,
-                            item.talla,
-                            item.dorsal,
-                            item.cantidad - 1,
-                          )
+                          actualizarCantidad(producto.id, item.cantidad - 1)
                         }
                         disabled={item.cantidad <= 1}
                         aria-label={`Reducir cantidad de ${producto.nombre}`}
-                        className='flex h-8 w-8 items-center justify-center rounded-l-full text-sm font-medium transition-colors hover:bg-lc-verde hover:text-white disabled:cursor-not-allowed disabled:text-black/25 disabled:hover:bg-transparent disabled:hover:text-black/25'
+                        className='flex h-8 w-8 items-center justify-center rounded-l-full transition-colors hover:bg-lc-morado hover:text-white disabled:cursor-not-allowed disabled:text-black/25 disabled:hover:bg-transparent disabled:hover:text-black/25'
                       >
-                        −
+                        <IconMinus className='h-3.5 w-3.5' />
                       </button>
                       <span
-                        className='flex h-8 min-w-8 items-center justify-center border-x border-black/10 px-1 text-xs font-semibold'
+                        className='flex h-8 min-w-8 items-center justify-center px-1 text-xs font-semibold'
                         aria-label={`Cantidad: ${item.cantidad}`}
                       >
                         {item.cantidad}
@@ -163,22 +157,17 @@ export function CartView() {
                       <button
                         type='button'
                         onClick={() =>
-                          actualizarCantidad(
-                            producto.id,
-                            item.talla,
-                            item.dorsal,
-                            item.cantidad + 1,
-                          )
+                          actualizarCantidad(producto.id, item.cantidad + 1)
                         }
                         disabled={item.cantidad >= 99}
                         aria-label={`Aumentar cantidad de ${producto.nombre}`}
-                        className='flex h-8 w-8 items-center justify-center rounded-r-full text-sm font-medium transition-colors hover:bg-lc-verde hover:text-white disabled:cursor-not-allowed disabled:text-black/25 disabled:hover:bg-transparent disabled:hover:text-black/25'
+                        className='flex h-8 w-8 items-center justify-center rounded-r-full transition-colors hover:bg-lc-morado hover:text-white disabled:cursor-not-allowed disabled:text-black/25 disabled:hover:bg-transparent disabled:hover:text-black/25'
                       >
-                        +
+                        <IconPlus className='h-3.5 w-3.5' />
                       </button>
                     </div>
 
-                    <p className='text-sm font-bold text-lc-verde'>
+                    <p className='text-sm font-bold text-lc-morado'>
                       {formatearPrecio(subtotal, tienda.simboloMoneda)}
                     </p>
                   </div>
@@ -190,25 +179,30 @@ export function CartView() {
 
         <Link
           href='/catalogo'
-          className='mt-4 inline-flex min-h-9 items-center text-xs font-semibold text-lc-verde underline-offset-4 hover:text-lc-rosa hover:underline'
+          className='mt-4 inline-flex min-h-9 items-center gap-1.5 text-xs font-semibold text-lc-morado transition-colors hover:text-lc-rosa'
         >
-          ← Seguir comprando
+          <IconArrowLeft className='h-3.5 w-3.5' />
+          Seguir comprando
         </Link>
       </div>
 
       {/* Resumen */}
-      <aside className='rounded-2xl border border-black/10 bg-white p-4 sm:p-5 lg:sticky lg:top-24'>
-        <h2 className='text-base font-bold tracking-tight sm:text-lg'>
+      <aside className='overflow-hidden rounded-2xl bg-white p-4 sm:p-5 lg:sticky lg:top-24'>
+        <h2 className='flex items-center gap-2 text-base font-bold tracking-tight sm:text-lg'>
+          <IconBag className='h-4 w-4 text-lc-rosa' />
           Resumen del pedido
         </h2>
 
-        <dl className='mt-3 space-y-2 border-b border-black/10 pb-3 text-xs sm:text-sm'>
+        <dl className='mt-3 space-y-2 pb-3 text-xs sm:text-sm'>
           <div className='flex items-center justify-between gap-3'>
             <dt className='text-black/60'>Artículos</dt>
             <dd className='font-semibold'>{totalArticulos}</dd>
           </div>
           <div className='flex items-center justify-between gap-3'>
-            <dt className='text-black/60'>Envío</dt>
+            <dt className='flex items-center gap-1.5 text-black/60'>
+              <IconTruck className='h-3.5 w-3.5 text-lc-morado' />
+              Envío
+            </dt>
             <dd className='font-medium'>A convenir</dd>
           </div>
         </dl>
@@ -217,14 +211,42 @@ export function CartView() {
           <p className='text-[10px] font-semibold uppercase tracking-[0.14em] text-black/60'>
             Total
           </p>
-          <p className='text-lg font-bold text-lc-verde sm:text-xl'>
+          <p className='text-lg font-bold text-lc-morado sm:text-xl'>
             {formatearPrecio(total, tienda.simboloMoneda)}
           </p>
         </div>
 
+        <div className='mb-3 rounded-lg bg-lc-morado/5 p-3'>
+          <p className='text-[11px] leading-relaxed text-black/60'>
+            Puedes revisar nuestro listado de tarifas de entrega.
+          </p>
+          <button
+            type='button'
+            onClick={abrirTarifas}
+            className='mt-1 text-[11px] font-semibold text-lc-morado transition-colors hover:text-lc-rosa'
+          >
+            Ver tarifas de entrega
+          </button>
+
+          {direccionRecogida ? (
+            <>
+              <p className='mt-2 text-[11px] leading-relaxed text-black/60'>
+                O recoger en local: {direccionRecogida}.
+              </p>
+              <button
+                type='button'
+                onClick={abrirRecogida}
+                className='mt-1 text-[11px] font-semibold text-lc-morado transition-colors hover:text-lc-rosa'
+              >
+                Ver mapa de recogida
+              </button>
+            </>
+          ) : null}
+        </div>
+
         <p className='text-[11px] leading-relaxed text-black/55'>
           El pago y el envío se acuerdan directamente por WhatsApp. Al pulsar el
-          botón se abrirá tu aplicación con el pedido ya escrito.
+          botón se abrirá tu aplicación con la solicitud de reserva ya escrita.
         </p>
 
         {enlacePedido ? (
@@ -232,21 +254,23 @@ export function CartView() {
             href={enlacePedido}
             target='_blank'
             rel='noopener noreferrer'
-            className='mt-4 flex min-h-10 w-full items-center justify-center rounded-full bg-lc-verde px-4 text-sm font-semibold text-white transition-colors hover:bg-lc-verde/90'
+            className='mt-4 flex min-h-10 w-full items-center justify-center gap-2 rounded-full bg-lc-morado px-4 text-sm font-semibold text-white transition-colors hover:bg-lc-morado/90'
           >
-            Generar pedido por WhatsApp
+            <IconWhatsApp className='h-4 w-4' />
+            Solicitar reserva por WhatsApp
           </a>
         ) : (
           <p
             role='alert'
-            className='mt-4 rounded-lg border border-red-300 bg-red-50 p-2.5 text-[11px] leading-relaxed text-red-800'
+            className='mt-4 rounded-lg bg-red-50 p-2.5 text-[11px] leading-relaxed text-red-800'
           >
             Falta configurar NEXT_PUBLIC_WHATSAPP_NUMBER. Añade tu número con
             prefijo de país en el archivo .env.local.
           </p>
         )}
 
-        <p className='mt-2 text-center text-[10px] text-black/45'>
+        <p className='mt-2 flex items-center justify-center gap-1 text-center text-[10px] text-black/45'>
+          <IconCheck className='h-3 w-3 text-lc-rosa' />
           No se realiza ningún cobro en esta web.
         </p>
       </aside>

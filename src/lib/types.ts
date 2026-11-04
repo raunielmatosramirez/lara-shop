@@ -14,10 +14,22 @@ export interface Categoria {
   descripcion: string;
 }
 
-// Cada dorsal tiene sus propias tallas disponibles
-export interface Dorsal {
-  numero: string;
-  tallas: string[];
+export interface TarifaMensajeria {
+  zona: string;
+  precio: number | null;
+}
+
+export interface GrupoMensajeria {
+  nombre: string;
+  tarifas: TarifaMensajeria[];
+  nota?: string;
+}
+
+export interface Mensajeria {
+  titulo: string;
+  descripcion: string;
+  grupos: GrupoMensajeria[];
+  nota: string;
 }
 
 export interface Producto {
@@ -27,24 +39,19 @@ export interface Producto {
   precio: number;
   categoria: string;
   imagenes: string[];
-  // Lista de dorsales con sus tallas. Si el producto no tiene dorsales,
-  // se puede usar `tallas` como fallback (ver abajo).
-  dorsales: Dorsal[];
-  // Tallas generales para productos sin dorsal (ej. retro sin número)
-  tallas: string[];
   destacado: boolean;
+  activo?: boolean;
 }
 
 export interface ConfiguracionTienda {
   tienda: Tienda;
+  mensajeria: Mensajeria;
   categorias: Categoria[];
   productos: Producto[];
 }
 
 export interface CartItem {
   productoId: string;
-  talla: string;
-  dorsal: string;
   cantidad: number;
 }
 

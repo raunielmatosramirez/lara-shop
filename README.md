@@ -1,135 +1,42 @@
-# La Camiseta
+# 🛍️ LaraShoping
 
-Catálogo estático de camisetas de fútbol de todas las épocas y equipos. El pedido se genera como
-mensaje de texto y se envía por WhatsApp. No hay backend, base de datos ni pasarela de pago.
+**LaraShoping** es una tienda online moderna y minimalista de ropa para mujer, hombre y niños. El proyecto está construido con **Next.js**, **Tailwind CSS** y **TypeScript**, y está optimizado para ser desplegado como un sitio estático en **Vercel**.
 
-## Stack
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-- Next.js con App Router y exportación estática (`output: "export"`).
-- TypeScript en modo estricto.
-- Tailwind CSS con la paleta de la tienda.
-- React Context + `localStorage` para el carrito.
-- pnpm como único gestor de paquetes.
+---
 
-## Requisitos
+## ✨ Características
 
-- Node.js 20 o superior.
-- pnpm 9. La versión está fijada en `packageManager`.
+- 🎨 **Diseño moderno y responsive:** Adaptado para móviles, tablets y escritorio.
+- 🛒 **Carrito de compras:** Gestión de productos añadidos mediante un proveedor de contexto (`CartProvider`).
+- 🔍 **Catálogo dinámico:** Filtrado por categorías (vestidos, blusas, pantalones, hombre, niños, etc.).
+- 📱 **Pedidos por WhatsApp:** Los pedidos y envíos se coordinan directamente por WhatsApp.
+- ⚡ **Optimizado para rendimiento:** Generación estática (`output: "export"`) y sin optimización de imágenes en servidor para evitar costes en Vercel.
+- 🔗 **Compartir productos:** Enlaces directos para compartir cada prenda.
 
-## Instalación
+---
 
-```bash
-pnpm install
-```
+## 🛠️ Tecnologías utilizadas
 
-## Variables de entorno
+- **Framework:** [Next.js](https://nextjs.org/) (App Router)
+- **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/)
+- **Iconos:** SVG personalizados
+- **Despliegue:** [Vercel](https://vercel.com/)
 
-Crea tu archivo local a partir del ejemplo:
+---
 
-```powershell
-Copy-Item .env.example .env.local
-```
+## 🚀 Instalación y uso local
 
-Edita `.env.local`:
+Sigue estos pasos para ejecutar el proyecto en tu máquina:
 
-```text
-NEXT_PUBLIC_WHATSAPP_NUMBER=34600000000
-NEXT_PUBLIC_HOSTING_URL=http://localhost:3000
-```
-
-- `NEXT_PUBLIC_WHATSAPP_NUMBER`: número de WhatsApp con prefijo de país y sin signos. Es el número
-  que recibirá los pedidos.
-- `NEXT_PUBLIC_HOSTING_URL`: URL pública de la web. Se usa para compartir productos por WhatsApp.
-  En local puede ser `http://localhost:3000`.
-
-Las variables deben empezar por `NEXT_PUBLIC_` para estar disponibles en el navegador. Si falta
-alguna, la web muestra un aviso en consola y no se rompe.
-
-## Desarrollo
+### 1. Clona el repositorio
 
 ```bash
-pnpm dev
+git clone https://github.com/TU-USUARIO/TU-REPO.git
+cd TU-REPO
 ```
-
-Abre [http://localhost:3000](http://localhost:3000).
-
-Páginas disponibles:
-
-- `/` — inicio, categorías y productos destacados.
-- `/catalogo` — catálogo completo con filtro por categoría.
-- `/producto/[id]` — detalle, galería, tallas, dorsales y compartir por WhatsApp.
-- `/carrito` — cantidades, total y generación del pedido por WhatsApp.
-
-## Scripts
-
-```bash
-pnpm dev        # servidor de desarrollo
-pnpm lint       # revisión de ESLint
-pnpm typecheck  # comprobación de tipos
-```
-
-## Estructura
-
-```text
-src/
-  app/            páginas y layout
-  components/     cabecera, footer, tarjetas, carrito, detalle
-  data/           config.json con tienda, categorías y productos
-  lib/            tipos, catálogo, formato de precios, pedido y variables de entorno
-public/
-  images/         imágenes de productos y hero
-```
-
-## Añadir o editar productos
-
-1. Edita `src/data/config.json`.
-2. Añade un objeto al array `productos` con este formato:
-
-```json
-{
-  "id": "prod-010",
-  "nombre": "Nombre de la camiseta",
-  "descripcion": "Descripción breve.",
-  "precio": 39.99,
-  "categoria": "retro",
-  "imagenes": ["/images/productos/prod-010-1.svg"],
-  "tallas": ["S", "M", "L", "XL"],
-  "dorsales": ["1", "7", "9", "10", "11"],
-  "destacado": false
-}
-```
-
-3. Sube las imágenes a `public/images/productos/`. La primera imagen es la principal.
-4. Usa un `id` único y una `categoria` existente: `temporada-actual`, `retro` o
-   `temporadas-antiguas`.
-5. `tallas` son las tallas disponibles y `dorsales` los números que se pueden estampar. Si un
-   producto no tiene dorsales, deja el array vacío.
-
-Las imágenes actuales son placeholders SVG. Puedes sustituirlas por fotos optimizadas en `.webp`
-manteniendo la misma ruta o actualizando el array `imagenes`.
-
-## Carrito y pedido
-
-El carrito se guarda en `localStorage` con la clave `la-camiseta-carrito-v1`. Cada línea es única
-por combinación de producto, talla y dorsal.
-
-El botón **Generar pedido por WhatsApp** construye un mensaje con este formato:
-
-```text
-Hola, quiero hacer el siguiente pedido:
-
-- 2x Camiseta Real Madrid Local 2024/25 (Talla M · Dorsal 7) — 99,98 €
-- 1x Camiseta Retro Barcelona 1992 (Talla L · Dorsal 10) — 39,99 €
-
-Total: 139,97 €
-```
-
-Después abre `https://wa.me/{NEXT_PUBLIC_WHATSAPP_NUMBER}?text={mensaje}`. El envío siempre lo
-confirma el usuario en su propia aplicación.
-
-## Build y despliegue
-
-Los pasos de build (`pnpm build`) y despliegue en Netlify se añadirán cuando se soliciten. En esta
-fase el proyecto está preparado para desarrollo local y revisión.
-
-Solo debe existir `pnpm-lock.yaml` como archivo de lock.

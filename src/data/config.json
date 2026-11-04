@@ -1,251 +1,844 @@
 {
   "tienda": {
-    "nombre": "La Camiseta",
-    "descripcion": "Camisetas de fútbol de todas las épocas y equipos",
-    "eslogan": "Viste la historia de tu equipo.",
-    "whatsapp": "",
-    "hosting": "https://la-camiseta.vercel.app",
-    "moneda": "USD",
-    "simboloMoneda": "$"
+    "nombre": "LaraShoping",
+    "descripcion": "Moda para mujer, hombre y niños",
+    "eslogan": "Tu estilo, tus reglas.",
+    "whatsapp": "5353870129",
+    "hosting": "https://larashop.vercel.app",
+    "moneda": "CUP",
+    "simboloMoneda": "CUP"
+  },
+  "mensajeria": {
+    "titulo": "Tarifas de mensajería",
+    "descripcion": "Precios orientativos; el costo final se confirma por WhatsApp según tu zona.",
+    "grupos": [
+      {
+        "nombre": "Arroyo Naranjo",
+        "tarifas": [
+          { "zona": "Los Pinos", "precio": 600 },
+          { "zona": "Vieja Linda", "precio": 700 },
+          { "zona": "Poey", "precio": 600 },
+          { "zona": "Santa Amalia", "precio": 700 },
+          { "zona": "La Palma", "precio": 700 },
+          { "zona": "Callejas", "precio": 700 },
+          { "zona": "Párraga", "precio": 700 },
+          { "zona": "Mantilla", "precio": 800 },
+          { "zona": "Reparto Ponce", "precio": 800 },
+          { "zona": "Guinera", "precio": 800 },
+          { "zona": "Reparto Capri", "precio": 700 },
+          { "zona": "Alcázar", "precio": 700 },
+          { "zona": "Reparto Eléctrico", "precio": 1100 },
+          { "zona": "Calvario", "precio": 1000 },
+          { "zona": "Managua", "precio": 1700 },
+          { "zona": "Aldabo y Altahabana", "precio": 500 }
+        ]
+      },
+      {
+        "nombre": "10 de Octubre",
+        "tarifas": [
+          { "zona": "Sevillano", "precio": 800 },
+          { "zona": "Víbora", "precio": 800 },
+          { "zona": "Víbora Park", "precio": 800 },
+          { "zona": "Santo Suárez", "precio": 900 },
+          { "zona": "Lawton", "precio": 900 },
+          { "zona": "Luyanó", "precio": 900 }
+        ]
+      },
+      {
+        "nombre": "Cerro",
+        "tarifas": [{ "zona": "Todo el municipio", "precio": 800 }]
+      },
+      {
+        "nombre": "Centro Habana",
+        "tarifas": [{ "zona": "Todo el municipio", "precio": 1000 }]
+      },
+      {
+        "nombre": "Habana Vieja",
+        "tarifas": [{ "zona": "Todo el municipio", "precio": 1100 }]
+      },
+      {
+        "nombre": "Plaza",
+        "tarifas": [
+          { "zona": "Vedado", "precio": 1000 },
+          { "zona": "Nuevo Vedado", "precio": 1000 }
+        ]
+      },
+      {
+        "nombre": "Marianao",
+        "tarifas": [
+          { "zona": "Cerca de 100 y 51 (máx. 1.5 km)", "precio": 1000 },
+          { "zona": "Resto del municipio", "precio": 1200 }
+        ]
+      },
+      {
+        "nombre": "La Lisa",
+        "tarifas": [
+          { "zona": "Todo el municipio", "precio": 1200 },
+          { "zona": "Barbosa", "precio": 1500 },
+          { "zona": "San Agustín", "precio": 1500 },
+          { "zona": "La Coronela", "precio": 1500 },
+          { "zona": "Valle Grande", "precio": 2200 },
+          { "zona": "Punta Brava", "precio": 2500 },
+          { "zona": "Arroyo Arenas", "precio": 2000 }
+        ]
+      },
+      {
+        "nombre": "Boyeros",
+        "tarifas": [
+          { "zona": "Altahabana", "precio": 500 },
+          { "zona": "La Fortuna", "precio": 700 },
+          { "zona": "Capdevila", "precio": 600 },
+          { "zona": "Río Verde", "precio": 1100 },
+          { "zona": "Abel Santa María", "precio": 1700 },
+          { "zona": "Fontanar", "precio": 1200 },
+          { "zona": "Cujae", "precio": 700 },
+          { "zona": "Calabazar", "precio": 1000 },
+          { "zona": "Mazorra", "precio": 1200 },
+          { "zona": "Wajay", "precio": 1800 },
+          { "zona": "Mulgoba", "precio": 1300 },
+          { "zona": "El Chico", "precio": 1500 },
+          { "zona": "Santiago de las Vegas", "precio": 1500 },
+          { "zona": "El Rincón", "precio": 2500 }
+        ]
+      },
+      {
+        "nombre": "Playa",
+        "tarifas": [
+          { "zona": "Todo el municipio", "precio": 1000 },
+          { "zona": "Buena Vista", "precio": 1000 },
+          { "zona": "La Ceiba", "precio": 1000 },
+          { "zona": "Almendares", "precio": 1000 },
+          { "zona": "Kholy", "precio": 1000 },
+          { "zona": "Jaimanitas", "precio": 1600 },
+          { "zona": "Santa Fe", "precio": 1600 },
+          { "zona": "Barbosa", "precio": 1500 },
+          { "zona": "Náutico", "precio": 1100 },
+          { "zona": "Siboney", "precio": 1200 },
+          { "zona": "Miramar", "precio": 1000 },
+          { "zona": "Flores", "precio": 1100 }
+        ]
+      },
+      {
+        "nombre": "San Miguel del Padrón",
+        "tarifas": [
+          { "zona": "Parque de la Virgen del Camino (no alrededores)", "precio": 1000 },
+          { "zona": "Reparto Núñez", "precio": 1200 },
+          { "zona": "Ciudamar", "precio": 1200 },
+          { "zona": "Diezmero", "precio": 1200 },
+          { "zona": "San Francisco de Paula", "precio": 1500 }
+        ],
+        "nota": "Resto del municipio: preguntar con dirección exacta o ubicación."
+      },
+      {
+        "nombre": "Cotorro",
+        "tarifas": [{ "zona": "Todo el municipio", "precio": 2000 }]
+      },
+      {
+        "nombre": "Regla",
+        "tarifas": [{ "zona": "Todo el municipio", "precio": 1500 }]
+      },
+      {
+        "nombre": "Guanabacoa",
+        "tarifas": [],
+        "nota": "Preguntar con dirección exacta o ubicación."
+      },
+      {
+        "nombre": "Habana del Este",
+        "tarifas": [
+          { "zona": "Alamar", "precio": 2500 },
+          { "zona": "Cojímar", "precio": 2000 },
+          { "zona": "Camilo Cienfuegos", "precio": 2000 },
+          { "zona": "Villa Panamericana", "precio": 2000 },
+          { "zona": "Bahía", "precio": 2000 },
+          { "zona": "Casa Blanca", "precio": 2200 }
+        ],
+        "nota": "No siempre está disponible. Resto del municipio: preguntar."
+      }
+    ],
+    "nota": "Solo información. El pago y la entrega se acuerdan por WhatsApp."
   },
   "categorias": [
     {
-      "id": "temporada-actual",
-      "nombre": "Temporada Actual",
-      "descripcion": "Camisetas de la temporada en curso"
+      "id": "vestidos",
+      "nombre": "Vestidos",
+      "descripcion": "Siluetas que abrazan tu figura"
     },
     {
-      "id": "retro",
-      "nombre": "Retro",
-      "descripcion": "Diseños retro clásicos"
+      "id": "vestidos-ajustados",
+      "nombre": "Vestidos ajustados",
+      "descripcion": "Vestidos largos y midi que realzan la silueta"
     },
     {
-      "id": "ofertas-temporadas-antiguas",
-      "nombre": "Ofertas Temporadas Antiguas",
-      "descripcion": "Camisetas de temporadas pasadas"
+      "id": "conjuntos",
+      "nombre": "Conjuntos",
+      "descripcion": "Dos piezas, un solo look"
+    },
+    {
+      "id": "blusas-tops",
+      "nombre": "Blusas y tops",
+      "descripcion": "Básicos con un toque especial"
+    },
+    {
+      "id": "ropa-deportiva-mujer",
+      "nombre": "Ropa deportiva mujer",
+      "descripcion": "Comodidad y estilo para entrenar"
+    },
+    {
+      "id": "ropa-deportiva-hombre",
+      "nombre": "Ropa deportiva hombre",
+      "descripcion": "Para él, comodidad y rendimiento"
+    },
+    {
+      "id": "trajes-de-bano",
+      "nombre": "Trajes de baño",
+      "descripcion": "Para tus días de playa y piscina"
     },
     {
       "id": "peques",
       "nombre": "Peques",
-      "descripcion": "Camisetas para los más pequeños"
-    },
-    {
-      "id": "selecciones",
-      "nombre": "Selecciones",
-      "descripcion": "Camisetas para los más pequeños"
+      "descripcion": "Moda para los más pequeños"
     }
   ],
   "productos": [
     {
-      "id": "prod-001",
-      "nombre": "Camiseta Real Madrid Local 2024/25",
-      "descripcion": "Réplica de la camiseta local de la temporada 2024/25. Tejido ligero y transpirable, con un corte cómodo para el día a día.",
-      "precio": 20,
-      "categoria": "temporada-actual",
-      "imagenes": [
-        "/images/productos/prod-001-1.svg",
-        "/images/productos/prod-001-2.svg"
-      ],
-      "dorsales": [
-        { "numero": "4", "tallas": ["M", "L", "XL"] },
-
-        { "numero": "8", "tallas": ["M", "L", "XL"] },
-        { "numero": "9", "tallas": ["S", "M", "L", "XL", "XXL"] },
-        { "numero": "10", "tallas": ["S", "M"] },
-        { "numero": "11", "tallas": ["M", "L", "XL"] },
-        { "numero": "14", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "15", "tallas": ["M", "L", "XL"] },
-        { "numero": "20", "tallas": ["S", "M", "L"] },
-        { "numero": "23", "tallas": ["M", "L", "XL", "XXL"] }
-      ],
-      "tallas": [],
+      "id": "prod-01",
+      "nombre": "Conjunto Elegante Dos Piezas Blanco",
+      "descripcion": "Un look impecable y sensual. Este conjunto de dos piezas en blanco incluye un top halter con detalle asimétrico en la cintura y una falda maxi de talle alto. Su diseño abierto en la espalda y su silueta ajustada te darán una figura espectacular. Perfecto para combinar con sandalias de tacón y accesorios dorados. ¡La pieza que tu clóset necesita para brillar!",
+      "precio": 4700,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/1.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-02",
+      "nombre": "Conjunto Elegante Dos Piezas Caramelo",
+      "descripcion": "Deslumbra con este sofisticado conjunto de dos piezas en tono caramelo. El top halter presenta un favorecedor detalle en forma de pañuelo en la cintura que estiliza la figura, mientras que la falda maxi de talle alto incluye una elegante abertura lateral que aporta movimiento y sensualidad. Confeccionado en un tejido suave con sutil acabado texturizado, es la elección perfecta para eventos de día o cenas elegantes.",
+      "precio": 4500,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/2.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-03",
+      "nombre": "Conjunto Elegante Dos Piezas Marrón",
+      "descripcion": "Un diseño sofisticado y sensual. Este conjunto de dos piezas en color marrón chocolate incluye un top halter con cuello alto, abertura frontal y un favorecedor lazo anudado en el centro. La falda maxi de talle alto y silueta ceñida realza la figura, convirtiéndolo en la elección perfecta para eventos nocturnos o cenas especiales.",
+      "precio": 4700,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/3.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-04",
+      "nombre": "Conjunto Elegante Dos Piezas Lila",
+      "descripcion": "Destaca con este vibrante conjunto de dos piezas en tono lila. El top halter presenta un cuello alto, un atractivo corte frontal con lazo y espalda descubierta. La falda maxi, de talle alto y corte ajustado, cuenta con una abertura lateral que aporta movimiento y estilo. Ideal para lucir una figura espectacular en cualquier ocasión.",
+      "precio": 4700,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/4.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-05",
+      "nombre": "Conjunto Elegante Dos Piezas Mostaza",
+      "descripcion": "Un diseño audaz y sofisticado en un vibrante tono mostaza. Este conjunto de dos piezas presenta un top halter con escote profundo en V y un favorecedor vuelo en la cintura (tipo peplum) que estiliza la figura. La falda maxi de talle alto incluye una pronunciada abertura lateral que aporta movimiento y sensualidad. Ideal para eventos de día o noches especiales.",
+      "precio": 4700,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/5.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-06",
+      "nombre": "Conjunto Elegante Dos Piezas Nude",
+      "descripcion": "Un look impecable y sensual en un versátil tono nude. Este conjunto de dos piezas incluye un top halter con cuello alto, abertura frontal y un favorecedor lazo anudado en el centro. La falda maxi de talle alto y silueta ceñida cuenta con una elegante abertura lateral que realza tus curvas con total elegancia. Perfecto para combinar con accesorios dorados.",
+      "precio": 4700,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/6.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-07",
+      "nombre": "Top Básico de Tirantes Rojo",
+      "descripcion": "Un básico infaltable en tu clóset. Este top de tirantes finos en color rojo intenso presenta un escote redondo y un corte ajustado al cuerpo que realza la silueta. Confeccionado en un tejido suave y elástico, es perfecto para combinar con jeans, faldas o pantalones de vestir, tanto para looks casuales como para salidas nocturnas.",
+      "precio": 3200.0,
+      "categoria": "blusas-tops",
+      "imagenes": ["/fotos/7.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-08",
+      "nombre": "Conjunto Elegante Dos Piezas Mostaza",
+      "descripcion": "Un diseño audaz y sofisticado en un vibrante tono mostaza. Este conjunto de dos piezas presenta un top halter con escote profundo en V y un favorecedor vuelo en la cintura (tipo peplum) que estiliza la figura. La falda maxi de talle alto incluye una pronunciada abertura lateral que aporta movimiento y sensualidad. Ideal para eventos de día o noches especiales.",
+      "precio": 4700.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/8.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-09",
+      "nombre": "Top Básico de Tirantes Gris",
+      "descripcion": "Un look impecable y versátil. Este top de tirantes finos en color gris presenta un escote redondo y un corte ajustado al cuerpo que estiliza la figura. Confeccionado en un tejido suave y elástico, es la pieza perfecta para el día a día, fácil de combinar con cualquier outfit casual o elegante.",
+      "precio": 3200.0,
+      "categoria": "blusas-tops",
+      "imagenes": ["/fotos/9.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-10",
+      "nombre": "Vestido Largo Ajustado de Canalé Gris",
+      "descripcion": "Un vestido que combina comodidad y sensualidad. Este modelo largo en color gris cuenta con un tejido de canalé acanalado que se adapta a tus curvas. Presenta tirantes finos, un pronunciado escote abierto en la espalda y una abertura lateral en la pierna que aporta un toque atrevido. Perfecto para looks de noche o eventos semiformal.",
+      "precio": 4500.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/10.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-11",
+      "nombre": "Top Básico de Tirantes Beige",
+      "descripcion": "Un básico infaltable y versátil en tu clóset. Este top de tirantes finos en tono beige presenta un escote redondo y un corte ajustado al cuerpo que realza la silueta. Confeccionado en un tejido suave y elástico, es perfecto para combinar con jeans, faldas o pantalones de vestir, ideal para looks casuales o de oficina.",
+      "precio": 3200.0,
+      "categoria": "blusas-tops",
+      "imagenes": ["/fotos/11.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-12",
+      "nombre": "Conjunto Corto Halter Lila",
+      "descripcion": "Un diseño fresco y coqueto en un vibrante tono lila. Este conjunto de dos piezas incluye un top halter con escote profundo y un favorecedor vuelo en la cintura (tipo peplum), acompañado de una minifalda ajustada de talle alto. Confeccionado en un tejido texturizado con sutil brillo, es ideal para salidas de día, fiestas o vacaciones.",
+      "precio": 4200.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/12.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-13",
+      "nombre": "Vestido Largo Ajustado de Canalé Celeste",
+      "descripcion": "Un vestido que combina comodidad y sensualidad. Este modelo largo en color celeste cuenta con un tejido de canalé acanalado que se adapta a tus curvas. Presenta tirantes finos, un pronunciado escote abierto en la espalda y una abertura lateral en la pierna que aporta un toque atrevido. Perfecto para looks de noche o eventos semiformal.",
+      "precio": 45.99,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/13.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-14",
+      "nombre": "Conjunto Corto Halter Celeste",
+      "descripcion": "Un diseño fresco y coqueto en un suave tono celeste. Este conjunto de dos piezas incluye un top halter con escote profundo y un favorecedor vuelo en la cintura (tipo peplum), acompañado de una minifalda ajustada de talle alto. Confeccionado en un tejido texturizado con sutil brillo, es ideal para salidas de día, fiestas o vacaciones.",
+      "precio": 4200.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/14.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-15",
+      "nombre": "Conjunto Corto Halter Nude",
+      "descripcion": "Un diseño fresco y coqueto en un suave tono nude. Este conjunto de dos piezas incluye un top halter con escote profundo y un favorecedor vuelo en la cintura (tipo peplum), acompañado de una minifalda ajustada de talle alto. Confeccionado en un tejido texturizado con sutil brillo, es ideal para salidas de día o fiestas.",
+      "precio": 4200.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/15.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-16",
+      "nombre": "Vestido Midi de Tul con Pedrería y Corona",
+      "descripcion": "Un hermoso vestido midi en tono nude con tirantes finos y escote en V. Destaca por sus detalles de pedrería en la cintura y su falda de tul plisado. Incluye una corona de flores a juego, siendo la elección perfecta para eventos especiales, bautizos o sesiones fotográficas.",
+      "precio": 8000.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/16.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-17",
+      "nombre": "Vestido Corto Halter Lila",
+      "descripcion": "Un vestido corto y coqueto en un vibrante tono lila. Presenta un diseño halter con cuello alto y un lazo anudado en la parte trasera. La falda tiene un corte en vuelo (tipo skater) que aporta movimiento, mientras que la parte superior se ajusta a la figura. Ideal para fiestas, graduaciones o eventos de día.",
+      "precio": 39.99,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/17.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-18",
+      "nombre": "Vestido Corto Halter Caramelo",
+      "descripcion": "Un vestido corto y elegante en un cálido tono caramelo. Presenta un diseño halter con cuello alto y un lazo anudado en la parte trasera. La falda tiene un corte en vuelo (tipo skater) que aporta movimiento, mientras que la parte superior se ajusta a la figura. Perfecto para fiestas, graduaciones o eventos de día.",
+      "precio": 4200.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/18.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-19",
+      "nombre": "Conjunto de Pantalón y Top Ajustado Nude",
+      "descripcion": "Un look moderno y elegante en un favorecedor tono nude. Este conjunto de dos piezas incluye un top de canalé con cuello alto y detalle en pico en la cintura, junto con un pantalón de pierna ancha (tipo palazzo) a juego. Confeccionado en un tejido acanalado de alta elasticidad, es perfecto para looks de día o para un estilo casual-chic.",
+      "precio": 8000.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/19.jpeg"],
+      "destacado": false,
+      "activo": false
+    },
+    {
+      "id": "prod-20",
+      "nombre": "Vestido de Maternidad con Corona de Flores",
+      "descripcion": "Un vestido etéreo y romántico ideal para sesiones de fotos de embarazo. Presenta tirantes finos, un escote en V y un detalle de pedrería en la cintura. Confeccionado en tul suave con forro, incluye una hermosa corona de flores a juego. ¡Un look de ensueño para un momento inolvidable!",
+      "precio": 10.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/20.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-21",
+      "nombre": "Conjunto de Dos Piezas Satín Negro",
+      "descripcion": "Un conjunto sofisticado y seductor en color negro. Incluye un top corto con escote drapeado (tipo cowl) y tirantes ajustables, junto con una falda midi de tiro alto con sutil drapeado lateral. Confeccionado en un tejido satinado con caída fluida, es perfecto para cenas elegantes o eventos nocturnos.",
+      "precio": 4200.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/21.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-22",
+      "nombre": "Conjunto de Dos Piezas Satín Rojo",
+      "descripcion": "Destaca con este conjunto vibrante y elegante en color rojo. Incluye un top corto con escote drapeado (tipo cowl) y tirantes ajustables, junto con una falda midi de tiro alto con sutil drapeado lateral. Confeccionado en un tejido satinado con caída fluida, es ideal para cenas románticas o fiestas.",
+      "precio": 4200.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/22.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-23",
+      "nombre": "Conjunto Deportivo Corto New York Azul (Mujer)",
+      "descripcion": "Un conjunto casual y cómodo para mujer en color azul rey. Incluye un top corto de manga corta con el estampado 'NEW YORK' en blanco y un short deportivo a juego con cintura elástica y cordón ajustable. Confeccionado en un tejido suave y transpirable, es perfecto para hacer deporte o para un look urbano y relajado.",
+      "precio": 4000.0,
+      "categoria": "ropa-deportiva-mujer",
+      "imagenes": ["/fotos/23.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-24",
+      "nombre": "Conjunto de Pantalón y Top Ajustado Lila (Mujer)",
+      "descripcion": "Un look moderno y elegante en un vibrante tono lila. Este conjunto de dos piezas incluye un top de canalé con cuello alto y detalle en pico en la cintura, junto con un pantalón de pierna ancha (tipo palazzo) a juego. Confeccionado en un tejido acanalado de alta elasticidad, es perfecto para looks de día o para un estilo casual-chic.",
+      "precio": 4500.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/24.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-25",
+      "nombre": "Conjunto Deportivo Brooklyn Blanco (Hombre)",
+      "descripcion": "Un conjunto deportivo casual para hombre en color blanco. Incluye una camiseta sin mangas (musculosa) con el estampado 'BROOKLYN NEW YORK' en negro, y un short a juego con cintura elástica y cordón ajustable. Confeccionado en un tejido suave y transpirable, ideal para entrenar o para un look urbano.",
+      "precio": 4600.0,
+      "categoria": "ropa-deportiva-hombre",
+      "imagenes": ["/fotos/25.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-26",
+      "nombre": "Conjunto Deportivo Brooklyn Azul (Hombre)",
+      "descripcion": "Un conjunto deportivo casual para hombre en color azul marino. Incluye una camiseta sin mangas (musculosa) con el estampado 'BROOKLYN NEW YORK' en blanco, y un short a juego con cintura elástica y cordón ajustable. Confeccionado en un tejido suave y transpirable, perfecto para el día a día o para hacer deporte.",
+      "precio": 4600.0,
+      "categoria": "ropa-deportiva-hombre",
+      "imagenes": ["/fotos/26.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-27",
+      "nombre": "Short Deportivo Nike Azul",
+      "descripcion": "Short deportivo en color azul marino con el logo de Nike en blanco en la pierna izquierda. Presenta cintura elástica con cordón ajustable y un corte cómodo. Ideal para entrenar, correr o para el uso diario.",
+      "precio": 3300.0,
+      "categoria": "ropa-deportiva-hombre",
+      "imagenes": ["/fotos/27.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-28",
+      "nombre": "Conjunto Deportivo Brooklyn Rojo (Hombre)",
+      "descripcion": "Un conjunto deportivo casual para hombre en color rojo. Incluye una camiseta sin mangas (musculosa) con el estampado 'BROOKLYN NEW YORK' en blanco, y un short a juego con cintura elástica y cordón ajustable. Confeccionado en un tejido suave y transpirable, ideal para entrenar o para un look urbano.",
+      "precio": 4600.0,
+      "categoria": "ropa-deportiva-hombre",
+      "imagenes": ["/fotos/28.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-29",
+      "nombre": "Short Deportivo Nike Rojo",
+      "descripcion": "Short deportivo para hombre en color rojo con el logo de Nike en blanco en la pierna izquierda. Presenta cintura elástica con cordón ajustable y un corte cómodo. Ideal para entrenar, correr o para el uso diario.",
+      "precio": 3300.0,
+      "categoria": "ropa-deportiva-hombre",
+      "imagenes": ["/fotos/29.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-30",
+      "nombre": "Vestido Largo Halter Amarillo",
+      "descripcion": "Un vestido largo y elegante en un vibrante tono amarillo. Presenta un diseño halter con cuello cruzado y abertura frontal en el pecho. La falda maxi de silueta ajustada incluye una pronunciada abertura lateral que aporta movimiento y sensualidad. Perfecto para eventos de noche o fiestas.",
+      "precio": 5000.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/30.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-31",
+      "nombre": "Vestido Largo Ajustado Rosa",
+      "descripcion": "Un vestido largo y elegante en un suave tono rosa. Presenta tirantes finos, escote redondo y una silueta ajustada al cuerpo que estiliza la figura. Confeccionado en un tejido suave y elástico, es perfecto para eventos formales o cenas especiales.",
+      "precio": 4500.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/31.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-32",
+      "nombre": "Short Deportivo Nike Blanco",
+      "descripcion": "Short deportivo para hombre en color blanco con el logo de Nike en negro en la pierna izquierda. Presenta cintura elástica con cordón ajustable y un corte cómodo. Ideal para entrenar, correr o para el uso diario.",
+      "precio": 3300.0,
+      "categoria": "ropa-deportiva-hombre",
+      "imagenes": ["/fotos/32.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-33",
+      "nombre": "Vestido Corto Halter Caramelo",
+      "descripcion": "Un vestido corto y sensual en un cálido tono caramelo. Presenta un diseño halter con cuello cruzado y un corte ajustado al cuerpo que realza la silueta. Confeccionado en un tejido suave y elástico, es perfecto para salidas nocturnas o eventos informales.",
+      "precio": 3500.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/33.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-34",
+      "nombre": "Vestido Corto Strapless con Fruncido Negro",
+      "descripcion": "Un vestido corto y elegante en color negro. Presenta un diseño strapless (sin tirantes) con un favorecedor fruncido lateral que estiliza la figura. Confeccionado en un tejido suave y elástico, es ideal para fiestas o eventos nocturnos.",
+      "precio": 4300.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/34.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-35",
+      "nombre": "Conjunto de Falda Larga y Top Blanco/Amarillo",
+      "descripcion": "Un conjunto fresco y versátil. Incluye un top corto de manga corta en color blanco con ribete amarillo y una falda maxi amarilla de tiro alto con abertura lateral. Confeccionado en un tejido suave y elástico, es perfecto para looks de día o vacaciones.",
+      "precio": 4500.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/35.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-36",
+      "nombre": "Conjunto Elegante Dos Piezas Negro",
+      "descripcion": "Un conjunto sofisticado y sensual en color negro. Incluye un top halter con cuello alto y abertura frontal, junto con una falda maxi de talle alto y silueta ceñida con una elegante abertura lateral que realza tus curvas. Perfecto para eventos nocturnos.",
+      "precio": 59.99,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/36.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-37",
+      "nombre": "Conjunto de Falda Midi y Top Canalé Gris",
+      "descripcion": "Un conjunto elegante y versátil en color gris. Incluye un top corto de canalé sin mangas con cuello redondo y una falda midi ajustada de tiro alto a juego. Confeccionado en un tejido acanalado de alta elasticidad, es perfecto para un look casual-chic de día o de noche.",
+      "precio": 4500.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/37.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-38",
+      "nombre": "Conjunto de Falda Larga y Top Blanco/Azul",
+      "descripcion": "Un conjunto fresco y versátil. Incluye un top corto de manga corta en color blanco con ribete azul y una falda maxi azul de tiro alto con silueta ajustada. Confeccionado en un tejido suave y elástico, es perfecto para looks de día o vacaciones.",
+      "precio": 4500.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/38.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-39",
+      "nombre": "Vestido Corto Ajustado Blanco",
+      "descripcion": "Un vestido corto y sensual en color blanco impoluto. Presenta un diseño halter con cuello cruzado y un corte ajustado al cuerpo que realza la silueta. Confeccionado en un tejido suave y elástico, es perfecto para salidas nocturnas o eventos informales.",
+      "precio": 3800.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/39.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-40",
+      "nombre": "Vestido Corto Halter Plisado Gris",
+      "descripcion": "Un vestido corto y coqueto en color gris con un sutil estampado texturizado. Presenta un diseño halter con escote profundo y abertura frontal, junto con una falda en vuelo que aporta movimiento. Ideal para fiestas o eventos de noche.",
+      "precio": 4000.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/40.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-41",
+      "nombre": "Conjunto de Falda Midi y Top Caramelo",
+      "descripcion": "Un conjunto elegante y texturizado en tono caramelo. Incluye un top corto sin mangas con escote redondo y una falda midi ajustada de tiro alto con abertura lateral. Confeccionado en un tejido plisado con caída fluida, es perfecto para looks de día o cenas informales.",
+      "precio": 4200.0,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/41.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-42",
+      "nombre": "Vestido Corto Strapless Fruncido Caramelo",
+      "descripcion": "Un vestido corto y sensual en tono caramelo. Presenta un diseño strapless (sin tirantes) con un favorecedor fruncido lateral y un lazo ajustable que estiliza la figura. Confeccionado en un tejido suave y elástico, es ideal para fiestas o eventos de noche.",
+      "precio": 3500.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/42.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-43",
+      "nombre": "Mono Deportivo Corto Blanco",
+      "descripcion": "Un enterizo deportivo de manga corta en color blanco. Presenta un favorecedor escote redondo en la parte delantera y una espalda descubierta con tirante horizontal. Confeccionado en un tejido suave y elástico, es ideal para entrenar, hacer yoga o para un look casual y deportivo.",
+      "precio": 3600.0,
+      "categoria": "ropa-deportiva-mujer",
+      "imagenes": ["/fotos/43.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-44",
+      "nombre": "Vestido Corto Halter Fruncido Marrón",
+      "descripcion": "Un vestido corto y sensual en color marrón chocolate. Presenta un diseño halter con cuello alto y lazo anudado en la nuca. El cuerpo cuenta con un favorecedor fruncido lateral que estiliza la figura. Confeccionado en un tejido suave de canalé, es perfecto para salidas nocturnas.",
+      "precio": 3600.0,
+      "categoria": "vestidos",
+      "imagenes": ["/fotos/44.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-45",
+      "nombre": "Bikini de Lunares Blanco y Negro",
+      "descripcion": "Un bikini clásico y divertido con estampado de lunares en blanco y negro. Incluye un top de triángulo con tiras anudadas al cuello y una braga tipo tanga con lazos laterales ajustables. Confeccionado en un tejido de secado rápido, perfecto para tus días de playa o piscina.",
+      "precio": 3500.0,
+      "categoria": "trajes-de-bano",
+      "imagenes": ["/fotos/45.jpeg"],
+      "destacado": false,
+      "activo": true
+    },
+    {
+      "id": "prod-46",
+      "nombre": "Bikini Negro con Mariposas Doradas",
+      "descripcion": "Un bikini elegante en color negro con detalles de mariposas bordadas en hilo dorado. Incluye un top de triángulo con tiras ajustables al cuello y una braga con lazos laterales. Confeccionado en un tejido suave y con forro, es ideal para lucir un look sofisticado en la playa.",
+      "precio": 3500.0,
+      "categoria": "trajes-de-bano",
+      "imagenes": ["/fotos/46.jpeg"],
+      "destacado": true,
+      "activo": true
+    },
+    {
+      "id": "prod-047",
+      "nombre": "Vestido largo ajustado coral",
+      "descripcion": "Vestido maxi de tirantes finos en color coral con escote redondo y silueta ajustada. Un diseño clásico y elegante que realza la figura.",
+      "precio": 4500,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/47.jpeg"],
       "destacado": true
     },
     {
-      "id": "prod-002",
-      "nombre": "Camiseta Manchester City Local 2025/26",
-      "descripcion": "Camiseta local de la temporada 2025/26 con acabado mate y detalles en contraste. Pensada para llevar con estilo dentro y fuera del campo.",
-      "precio": 20,
-      "categoria": "temporada-actual",
-      "imagenes": [
-        "/images/productos/prod-002-1.svg",
-        "/images/productos/prod-002-2.svg"
-      ],
-      "dorsales": [
-        { "numero": "1", "tallas": ["M", "L", "XL"] },
-        { "numero": "3", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "5", "tallas": ["M", "L", "XL", "XXL"] },
-        { "numero": "6", "tallas": ["S", "M", "L"] },
-        { "numero": "8", "tallas": ["M", "L", "XL"] },
-        { "numero": "9", "tallas": ["S", "M", "L", "XL", "XXL"] },
-        { "numero": "10", "tallas": ["S", "M", "L"] },
-        { "numero": "16", "tallas": ["M", "L"] },
-        { "numero": "17", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "20", "tallas": ["M", "L", "XL"] },
-        { "numero": "25", "tallas": ["S", "M"] },
-        { "numero": "31", "tallas": ["M", "L"] },
-        { "numero": "47", "tallas": ["S", "M", "L", "XL", "XXL"] }
-      ],
-      "tallas": [],
-      "destacado": false
-    },
-    {
-      "id": "prod-003",
-      "nombre": "Camiseta Argentina Local 2024",
-      "descripcion": "Camiseta de la selección albiceleste para la temporada 2024. Tela suave, transpirable y de secado rápido.",
-      "precio": 20,
-      "categoria": "selecciones",
-      "imagenes": [
-        "/images/productos/prod-003-1.svg",
-        "/images/productos/prod-003-2.svg"
-      ],
-      "dorsales": [
-        { "numero": "1", "tallas": ["M", "L", "XL"] },
-        { "numero": "3", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "4", "tallas": ["S", "M", "L"] },
-        { "numero": "5", "tallas": ["M", "L", "XL"] },
-        { "numero": "6", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "7", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "9", "tallas": ["M", "L", "XL"] },
-        { "numero": "10", "tallas": ["S", "M", "L"] },
-        { "numero": "11", "tallas": ["M", "L", "XL"] },
-        { "numero": "20", "tallas": ["S", "M"] },
-        { "numero": "22", "tallas": ["M", "L"] },
-        { "numero": "24", "tallas": ["S", "M", "L", "XL"] }
-      ],
-      "tallas": [],
+      "id": "prod-048",
+      "nombre": "Vestido largo mostaza con abertura",
+      "descripcion": "Vestido maxi de cuello redondo sin mangas en color mostaza, con abertura lateral alta. Cómodo y versátil para el día a día.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/48.jpeg"],
       "destacado": true
     },
     {
-      "id": "prod-004",
-      "nombre": "Camiseta Retro Barcelona 1992",
-      "descripcion": "Diseño retro inspirado en la temporada 1992. Corte clásico, cuello polo y detalles en azul y amarillo.",
-      "precio": 15,
-      "categoria": "retro",
-      "imagenes": [
-        "/images/productos/prod-004-1.svg",
-        "/images/productos/prod-004-2.svg"
-      ],
-      "dorsales": [],
-      "tallas": ["S", "M", "L", "XL"],
+      "id": "prod-049",
+      "nombre": "Vestido largo halter mostaza",
+      "descripcion": "Vestido maxi en color mostaza con cuello halter, aberturas laterales en la cintura y espalda descubierta. Un diseño sofisticado y atrevido.",
+      "precio": 49.9,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/49.jpeg"],
       "destacado": true
     },
     {
-      "id": "prod-005",
-      "nombre": "Camiseta Retro Milan 1994",
-      "descripcion": "Réplica retro de la camiseta de 1994. Rayas clásicas, escote de pico y un tejido suave de tacto vintage.",
-      "precio": 15,
-      "categoria": "retro",
-      "imagenes": [
-        "/images/productos/prod-005-1.svg",
-        "/images/productos/prod-005-2.svg"
-      ],
-      "dorsales": [],
-      "tallas": ["M", "L", "XL"],
+      "id": "prod-050",
+      "nombre": "Vestido largo ajustado lila",
+      "descripcion": "Vestido maxi de tirantes finos en color lila con escote redondo y silueta ajustada. Suavidad y elegancia en una sola pieza.",
+      "precio": 45.9,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/50.jpeg"],
       "destacado": false
     },
     {
-      "id": "prod-006",
-      "nombre": "Camiseta Retro Francia 1998",
-      "descripcion": "Camiseta retro de la selección francesa de 1998. Base azul, detalles tricolores y corte holgado de los noventa.",
-      "precio": 15,
-      "categoria": "retro",
-      "imagenes": [
-        "/images/productos/prod-006-1.svg",
-        "/images/productos/prod-006-2.svg"
-      ],
-      "dorsales": [],
-      "tallas": ["S", "M", "L", "XL", "XXL"],
-      "destacado": false
-    },
-    {
-      "id": "prod-007",
-      "nombre": "Camiseta Liverpool Local 2018/19",
-      "descripcion": "Camiseta local de la temporada 2018/19. Rojo intenso, detalles en azul y un corte ajustado.",
-      "precio": 18,
-      "categoria": "temporadas-antiguas",
-      "imagenes": [
-        "/images/productos/prod-007-1.svg",
-        "/images/productos/prod-007-2.svg"
-      ],
-      "dorsales": [
-        { "numero": "1", "tallas": ["M", "L", "XL"] },
-        { "numero": "3", "tallas": ["S", "M", "L"] },
-        { "numero": "4", "tallas": ["M", "L", "XL"] },
-        { "numero": "5", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "6", "tallas": ["M", "L"] },
-        { "numero": "7", "tallas": ["S", "M", "L", "XL", "XXL"] },
-        { "numero": "9", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "10", "tallas": ["S", "M", "L"] },
-        { "numero": "11", "tallas": ["M", "L", "XL"] },
-        { "numero": "14", "tallas": ["S", "M"] },
-        { "numero": "20", "tallas": ["M", "L", "XL"] },
-        { "numero": "23", "tallas": ["S", "M", "L"] },
-        { "numero": "26", "tallas": ["M", "L"] },
-        { "numero": "32", "tallas": ["S", "M", "L", "XL"] }
-      ],
-      "tallas": [],
+      "id": "prod-051",
+      "nombre": "Vestido largo azul con abertura",
+      "descripcion": "Vestido maxi de cuello redondo sin mangas en color azul rey, con abertura lateral alta. Un look vibrante y moderno.",
+      "precio": 46.9,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/51.jpeg"],
       "destacado": true
     },
     {
-      "id": "prod-008",
-      "nombre": "Camiseta Bayern Múnich Local 2019/20",
-      "descripcion": "Camiseta local de la temporada 2019/20. Diseño limpio con detalles azules y tejido transpirable.",
-      "precio": 18,
-      "categoria": "temporadas-antiguas",
-      "imagenes": [
-        "/images/productos/prod-008-1.svg",
-        "/images/productos/prod-008-2.svg"
-      ],
-      "dorsales": [
-        { "numero": "1", "tallas": ["M", "L", "XL"] },
-        { "numero": "4", "tallas": ["S", "M", "L"] },
-        { "numero": "5", "tallas": ["M", "L", "XL"] },
-        { "numero": "6", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "7", "tallas": ["S", "M", "L"] },
-        { "numero": "9", "tallas": ["M", "L", "XL"] },
-        { "numero": "10", "tallas": ["S", "M", "L"] },
-        { "numero": "13", "tallas": ["M", "L"] },
-        { "numero": "17", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "18", "tallas": ["M", "L", "XL"] },
-        { "numero": "19", "tallas": ["S", "M"] },
-        { "numero": "22", "tallas": ["M", "L", "XL"] },
-        { "numero": "25", "tallas": ["S", "M", "L"] },
-        { "numero": "29", "tallas": ["M", "L"] },
-        { "numero": "32", "tallas": ["S", "M", "L", "XL"] }
-      ],
-      "tallas": [],
+      "id": "prod-052",
+      "nombre": "Vestido midi ajustado rosa",
+      "descripcion": "Vestido midi de cuello alto sin mangas en color rosa. Silueta ceñida al cuerpo con un corte elegante y moderno.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/52.jpeg"],
       "destacado": false
     },
     {
-      "id": "prod-009",
-      "nombre": "Camiseta Valencia Local 2001/02",
-      "descripcion": "Camiseta local de la temporada 2001/02. Diseño clásico en blanco y negro con un toque naranja.",
-      "precio": 18,
-      "categoria": "temporadas-antiguas",
-      "imagenes": [
-        "/images/productos/prod-009-1.svg",
-        "/images/productos/prod-009-2.svg"
-      ],
-      "dorsales": [
-        { "numero": "1", "tallas": ["M", "L", "XL"] },
-        { "numero": "2", "tallas": ["S", "M", "L"] },
-        { "numero": "3", "tallas": ["M", "L", "XL"] },
-        { "numero": "4", "tallas": ["S", "M", "L"] },
-        { "numero": "5", "tallas": ["M", "L"] },
-        { "numero": "6", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "7", "tallas": ["M", "L", "XL"] },
-        { "numero": "8", "tallas": ["S", "M"] },
-        { "numero": "9", "tallas": ["M", "L", "XL"] },
-        { "numero": "10", "tallas": ["S", "M", "L"] },
-        { "numero": "11", "tallas": ["M", "L"] },
-        { "numero": "13", "tallas": ["S", "M", "L", "XL"] },
-        { "numero": "14", "tallas": ["M", "L"] },
-        { "numero": "19", "tallas": ["S", "M", "L"] },
-        { "numero": "21", "tallas": ["M", "L", "XL"] }
-      ],
-      "tallas": [],
+      "id": "prod-053",
+      "nombre": "Vestido largo ajustado azul cielo",
+      "descripcion": "Vestido maxi de tirantes finos en color azul cielo con escote redondo y silueta ajustada. Un diseño fresco y elegante.",
+      "precio": 4500,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/53.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-054",
+      "nombre": "Vestido midi ajustado coral",
+      "descripcion": "Vestido midi de cuello alto sin mangas en color coral. Silueta ceñida al cuerpo que estiliza la figura.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/54.jpeg"],
       "destacado": false
+    },
+    {
+      "id": "prod-055",
+      "nombre": "Conjunto de top y falda azul eléctrico",
+      "descripcion": "Conjunto de dos piezas en azul eléctrico: top halter con abertura en el pecho y falda midi ajustada con abertura lateral.",
+      "precio": 4400,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/55.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-056",
+      "nombre": "Conjunto de top y falda blanco",
+      "descripcion": "Conjunto de dos piezas en blanco: top halter con abertura en el pecho y falda midi ajustada con abertura lateral. Un look limpio y sofisticado.",
+      "precio": 4400,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/56.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-057",
+      "nombre": "Vestido midi ajustado mostaza",
+      "descripcion": "Vestido midi de cuello alto sin mangas en color mostaza. Silueta ceñida al cuerpo con un corte elegante y moderno.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/57.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-058",
+      "nombre": "Vestido largo azul cielo con abertura",
+      "descripcion": "Vestido maxi de cuello redondo sin mangas en color azul cielo, con abertura lateral alta. Un look fresco y versátil.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/58.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-059",
+      "nombre": "Vestido largo amarillo con espalda cruzada",
+      "descripcion": "Vestido maxi en color amarillo con tirantes finos, espalda descubierta con tiras cruzadas y abertura frontal. Un diseño llamativo y sofisticado.",
+      "precio": 5000,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/59.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-060",
+      "nombre": "Vestido largo ajustado azul marino",
+      "descripcion": "Vestido maxi de tirantes finos en color azul marino con escote redondo y silueta ajustada. Elegancia atemporal.",
+      "precio": 4500,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/60.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-061",
+      "nombre": "Conjunto de top y falda blanco plisado",
+      "descripcion": "Conjunto de dos piezas en blanco con top de tirantes anchos y falda midi plisada con abertura lateral. Un look texturizado y elegante.",
+      "precio": 4400,
+      "categoria": "conjuntos",
+      "imagenes": ["/fotos/61.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-062",
+      "nombre": "Vestido midi ajustado celeste",
+      "descripcion": "Vestido midi de cuello alto sin mangas en color celeste. Silueta ceñida al cuerpo con un corte elegante y moderno.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/62.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-063",
+      "nombre": "Vestido largo halter rosa",
+      "descripcion": "Vestido maxi en color rosa con cuello halter, aberturas laterales en la cintura y espalda descubierta. Un diseño sofisticado y atrevido.",
+      "precio": 4800,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/63.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-064",
+      "nombre": "Vestido largo terracota con abertura",
+      "descripcion": "Vestido maxi de cuello redondo sin mangas en color terracota, con abertura lateral alta. Cómodo y versátil para el día a día.",
+      "precio": 4600,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/64.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-065",
+      "nombre": "Vestido largo halter marrón",
+      "descripcion": "Vestido maxi en color marrón con cuello halter, aberturas laterales en la cintura y espalda descubierta. Un diseño sofisticado y atrevido.",
+      "precio": 49.9,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/65.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-066",
+      "nombre": "Vestido largo halter lila",
+      "descripcion": "Vestido maxi en color lila con cuello halter, aberturas laterales en la cintura y espalda descubierta. Un diseño sofisticado y atrevido.",
+      "precio": 49.9,
+      "categoria": "vestidos-ajustados",
+      "imagenes": ["/fotos/66.jpeg"],
+      "destacado": true
     }
   ]
 }

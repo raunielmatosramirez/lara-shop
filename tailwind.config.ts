@@ -5,10 +5,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "lc-verde": "#013b0e",
-        "lc-rosa": "#FF328F",
+        "lc-morado": "#4C1D95",
+        "lc-morado-oscuro": "#3B0764",
+        "lc-rosa": "#BE185D",
+        "lc-rosa-suave": "#FCE7F3",
         "lc-blanco": "#FFFFFF",
-        "lc-negro": "#000000",
+        "lc-negro": "#1F1235",
       },
       fontFamily: {
         sans: [

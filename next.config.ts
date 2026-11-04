@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
-const modo = process.env.NEXT_PUBLIC_MODO || "estatico";
 
 const nextConfig: NextConfig = {
-  output: modo === "estatico" ? "export" : undefined,
+  output: "export",
   trailingSlash: true,
   images: {
     unoptimized: true,

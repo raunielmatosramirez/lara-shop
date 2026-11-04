@@ -3,25 +3,36 @@
 import { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
 import {
+  IconArrowRight,
+  IconGrid,
+  IconoCategoria,
+} from "@/components/Icons";
+import {
   categorias,
   contarProductosPorCategoria,
+  getProductosDestacados,
   productos,
 } from "@/lib/catalog";
 
 const TODAS = "todas";
+const DESTACADOS = "destacados";
 
 export function CatalogView() {
   const [categoriaActiva, setCategoriaActiva] = useState(TODAS);
 
   useEffect(() => {
     const aplicarHash = () => {
-      const categoria = window.location.hash.replace("#", "");
+      const hash = window.location.hash.replace("#", "");
 
-      if (categoria && categorias.some((item) => item.id === categoria)) {
-        setCategoriaActiva(categoria);
-      } else {
-        setCategoriaActiva(TODAS);
+      if (
+        hash === DESTACADOS ||
+        categorias.some((item) => item.id === hash)
+      ) {
+        setCategoriaActiva(hash);
+        return;
       }
+
+      setCategoriaActiva(TODAS);
     };
 
     aplicarHash();
@@ -30,29 +41,40 @@ export function CatalogView() {
     return () => window.removeEventListener("hashchange", aplicarHash);
   }, []);
 
-  function seleccionarCategoria(categoriaId: string) {
-    setCategoriaActiva(categoriaId);
-
-    const url =
-      categoriaId === TODAS
-        ? window.location.pathname
-        : `${window.location.pathname}#${categoriaId}`;
+  function actualizarUrl(hash?: string) {
+    const url = hash
+      ? `${window.location.pathname}#${hash}`
+      : window.location.pathname;
 
     window.history.replaceState(null, "", url);
   }
 
-  const productosFiltrados = useMemo(
-    () =>
-      categoriaActiva === TODAS
-        ? productos
-        : productos.filter(
-            (producto) => producto.categoria === categoriaActiva,
-          ),
-    [categoriaActiva],
-  );
+  function seleccionarCategoria(categoriaId: string) {
+    setCategoriaActiva(categoriaId);
+    actualizarUrl(categoriaId === TODAS ? undefined : categoriaId);
+  }
+
+  const productosFiltrados = useMemo(() => {
+    if (categoriaActiva === TODAS) {
+      return productos;
+    }
+
+    if (categoriaActiva === DESTACADOS) {
+      return getProductosDestacados();
+    }
+
+    return productos.filter(
+      (producto) => producto.categoria === categoriaActiva,
+    );
+  }, [categoriaActiva]);
 
   const filtros = [
     { id: TODAS, nombre: "Todas", total: productos.length },
+    {
+      id: DESTACADOS,
+      nombre: "Destacados",
+      total: getProductosDestacados().length,
+    },
     ...categorias.map((categoria) => ({
       id: categoria.id,
       nombre: categoria.nombre,
@@ -78,10 +100,16 @@ export function CatalogView() {
               onClick={() => seleccionarCategoria(filtro.id)}
               className={`inline-flex min-h-8 shrink-0 items-center gap-1.5 rounded-full border px-3 text-xs font-semibold transition-colors ${
                 activo
-                  ? "border-lc-verde bg-lc-verde text-white"
-                  : "border-black/10 bg-white text-lc-negro hover:border-lc-verde hover:text-lc-verde"
+                  ? "border-lc-morado bg-lc-morado text-white"
+                  : "border-black/10 bg-white text-lc-negro hover:border-lc-morado hover:text-lc-morado"
               }`}
             >
+              <IconoCategoria
+                id={filtro.id}
+                className={`h-3.5 w-3.5 ${
+                  activo ? "text-white/80" : "text-lc-rosa"
+                }`}
+              />
               {filtro.nombre}
               <span
                 className={`text-[10px] font-medium ${
@@ -95,19 +123,22 @@ export function CatalogView() {
         })}
       </div>
 
-      {/* Contador + línea */}
-      <div className='mt-4 flex items-center justify-between border-b border-black/5 pb-2'>
+      {/* Contador */}
+      <div className='relative mt-4 flex items-center justify-between pb-2'>
         <p className='text-[11px] text-black/50' aria-live='polite'>
           {productosFiltrados.length}{" "}
           {productosFiltrados.length === 1 ? "producto" : "productos"}
+          {categoriaActiva === DESTACADOS ? " · Destacados" : ""}
         </p>
         {categoriaActiva !== TODAS ? (
           <button
             type='button'
             onClick={() => seleccionarCategoria(TODAS)}
-            className='text-[11px] font-semibold text-lc-verde underline-offset-4 hover:text-lc-rosa hover:underline'
+            className='inline-flex items-center gap-1 text-[11px] font-semibold text-lc-morado transition-colors hover:text-lc-rosa'
           >
+            <IconGrid className='h-3 w-3' />
             Ver todas
+            <IconArrowRight className='h-3 w-3' />
           </button>
         ) : null}
       </div>

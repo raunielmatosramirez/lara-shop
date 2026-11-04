@@ -10,3 +10,11 @@ export function redondear(valor: number): number {
 export function formatearPrecio(valor: number, simbolo: string): string {
   return `${formateadorNumero.format(redondear(valor))} ${simbolo}`;
 }
+
+const formateadorEntero = new Intl.NumberFormat("es-ES", {
+  maximumFractionDigits: 0,
+});
+
+export function formatearPrecioEntero(valor: number, simbolo: string): string {
+  return `${formateadorEntero.format(Math.round(valor))} ${simbolo}`;
+}

@@ -5,16 +5,26 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/Container";
 import { useCart } from "@/components/CartProvider";
+import {
+  IconChat,
+  IconClose,
+  IconHanger,
+  IconHome,
+  IconBag,
+  IconMenu,
+} from "@/components/Icons";
 
 const enlaces = [
-  { href: "/", label: "Inicio" },
-  { href: "/catalogo", label: "Catálogo" },
-  { href: "/#como-funciona", label: "Cómo comprar" },
+  { href: "/", label: "Inicio", Icono: IconHome },
+  { href: "/catalogo", label: "Catálogo", Icono: IconHanger },
+  { href: "/#como-funciona", label: "Cómo comprar", Icono: IconChat },
 ];
 
 function claseEnlace(activo: boolean): string {
-  return `flex min-h-9 items-center px-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-azul ${
-    activo ? "text-lc-negro" : "text-lc-negro/60 hover:text-lc-negro"
+  return `flex min-h-9 items-center gap-1.5 rounded-full px-3.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-morado ${
+    activo
+      ? "bg-lc-morado/8 text-lc-morado"
+      : "text-lc-negro/60 hover:bg-lc-morado/5 hover:text-lc-morado"
   }`;
 }
 
@@ -43,29 +53,21 @@ export function Header() {
   }, [menuAbierto]);
 
   return (
-    <header className='sticky top-0 z-50 bg-lc-blanco text-lc-negro'>
-      {/* Franja deportiva de rayas rosadas */}
-      <div aria-hidden='true' className='flex h-1.5 w-full'>
-        <span className='h-full flex-1 bg-lc-rosa' />
-        <span className='h-full flex-1 bg-lc-negro' />
-        <span className='h-full flex-1 bg-lc-rosa' />
-        <span className='h-full flex-1 bg-lc-negro' />
-        <span className='h-full flex-1 bg-lc-rosa' />
-      </div>
-
+    <header className='sticky top-0 z-50 bg-lc-blanco/95 text-lc-negro backdrop-blur-sm supports-[backdrop-filter]:bg-lc-blanco/80'>
       <Container>
         <div className='flex h-14 items-center justify-between gap-4 md:h-16'>
-          {/* Logo limpio */}
+          {/* Logo */}
           <Link
             href='/'
-            aria-label='La Camiseta, ir al inicio'
-            className='flex min-h-9 flex-col justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-azul'
+            aria-label='LaraShop, ir al inicio'
+            className='group flex min-h-9 flex-col justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-morado focus-visible:ring-offset-2 rounded-sm'
           >
             <span className='text-base font-bold tracking-tight sm:text-lg'>
-              La Camiseta
+              <span className='text-lc-morado'>Lara</span>
+              <span className='text-lc-rosa'>Shoping</span>
             </span>
-            <span className='text-[9px] uppercase tracking-[0.2em] text-lc-azul'>
-              Fútbol · Todas las épocas
+            <span className='mt-0.5 flex items-center gap-1.5 text-[9px] uppercase tracking-[0.2em] text-lc-rosa'>
+              Moda para toda la familia
             </span>
           </Link>
 
@@ -82,10 +84,17 @@ export function Header() {
                   aria-current={pathname === enlace.href ? "page" : undefined}
                   className={claseEnlace(pathname === enlace.href)}
                 >
+                  <enlace.Icono className='h-3.5 w-3.5' />
                   {enlace.label}
                 </Link>
               ))}
             </nav>
+
+            {/* Separador vertical (escritorio) */}
+            <span
+              aria-hidden='true'
+              className='hidden h-5 w-px bg-lc-negro/10 md:block'
+            />
 
             {/* Carrito */}
             <Link
@@ -95,21 +104,11 @@ export function Header() {
                   ? `Carrito, ${totalItems} artículos`
                   : "Carrito, vacío"
               }
-              className='relative flex h-9 w-9 items-center justify-center text-lc-negro/70 transition-colors hover:text-lc-negro focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-azul'
+              className='relative flex h-9 w-9 items-center justify-center rounded-full text-lc-negro/70 transition-colors hover:bg-lc-morado/5 hover:text-lc-morado focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-morado'
             >
-              <svg
-                aria-hidden='true'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='1.6'
-                className='h-5 w-5'
-              >
-                <path d='M6 8h12l-1 12H7L6 8Z' />
-                <path d='M9 9V6a3 3 0 0 1 6 0v3' />
-              </svg>
+              <IconBag className='h-5 w-5' />
               {hydrated && totalItems > 0 ? (
-                <span className='absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-lc-rosa px-1 text-[10px] font-bold leading-none text-lc-negro'>
+                <span className='absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-lc-rosa px-1 text-[10px] font-bold leading-none text-white'>
                   {totalItems > 99 ? "99+" : totalItems}
                 </span>
               ) : null}
@@ -123,52 +122,35 @@ export function Header() {
               aria-expanded={menuAbierto}
               aria-controls='menu-principal-movil'
               aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
-              className='flex h-9 w-9 items-center justify-center text-lc-negro/70 transition-colors hover:text-lc-negro focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-azul md:hidden'
+              className='flex h-9 w-9 items-center justify-center rounded-full text-lc-negro/70 transition-colors hover:bg-lc-morado/5 hover:text-lc-morado focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lc-morado md:hidden'
             >
               {menuAbierto ? (
-                <svg
-                  aria-hidden='true'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1.6'
-                  className='h-5 w-5'
-                >
-                  <path d='M6 6l12 12M18 6L6 18' />
-                </svg>
+                <IconClose className='h-5 w-5' />
               ) : (
-                <svg
-                  aria-hidden='true'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1.6'
-                  className='h-5 w-5'
-                >
-                  <path d='M4 7h16M4 12h16M4 17h16' />
-                </svg>
+                <IconMenu className='h-5 w-5' />
               )}
             </button>
           </div>
         </div>
       </Container>
 
-      {/* Menú móvil limpio */}
+      {/* Menú móvil */}
       {menuAbierto ? (
         <div
           id='menu-principal-movil'
-          className='border-t border-lc-negro/10 bg-lc-blanco md:hidden'
+          className='bg-lc-blanco md:hidden'
         >
           <Container>
             <nav aria-label='Navegación móvil'>
-              <ul className='flex flex-col py-1'>
+              <ul className='flex flex-col py-2'>
                 {enlaces.map((enlace) => (
                   <li key={enlace.href}>
                     <Link
                       href={enlace.href}
                       onClick={() => setMenuAbierto(false)}
-                      className='flex min-h-10 items-center px-1 text-sm font-medium text-lc-negro/70 transition-colors hover:text-lc-negro'
+                      className='flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium text-lc-negro/70 transition-colors hover:bg-lc-morado/5 hover:text-lc-morado'
                     >
+                      <enlace.Icono className='h-4 w-4 text-lc-rosa' />
                       {enlace.label}
                     </Link>
                   </li>
@@ -177,8 +159,9 @@ export function Header() {
                   <Link
                     href='/carrito'
                     onClick={() => setMenuAbierto(false)}
-                    className='flex min-h-10 items-center px-1 text-sm font-medium text-lc-negro/70 transition-colors hover:text-lc-negro'
+                    className='flex min-h-11 items-center gap-3 rounded-lg px-3 text-sm font-medium text-lc-negro/70 transition-colors hover:bg-lc-morado/5 hover:text-lc-morado'
                   >
+                    <IconBag className='h-4 w-4 text-lc-rosa' />
                     Carrito{totalItems > 0 ? ` (${totalItems})` : ""}
                   </Link>
                 </li>

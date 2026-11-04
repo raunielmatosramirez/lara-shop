@@ -1,8 +1,8 @@
 {
-  "name": "la-camiseta",
+  "name": "LaraShop",
   "version": "1.0.0",
   "private": true,
-  "description": "Catálogo estático de camisetas de fútbol con pedido por WhatsApp",
+  "description": "Tienda de ropa LaraShop con pedido por WhatsApp",
   "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=20.0.0"

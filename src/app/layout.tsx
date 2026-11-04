@@ -3,10 +3,12 @@ import "../app/globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { ShippingRates } from "@/components/ShippingRates";
 import { tienda } from "@/lib/catalog";
+import { obtenerUrlHosting } from "@/lib/env";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_HOSTING_URL || tienda.hosting),
+  metadataBase: new URL(obtenerUrlHosting()),
   title: {
     default: `${tienda.nombre} — ${tienda.descripcion}`,
     template: `%s · ${tienda.nombre}`,
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1B3A2F",
+  themeColor: "#4C1D95",
 };
 
 export default function RootLayout({
@@ -42,6 +44,7 @@ export default function RootLayout({
             <main className='flex-1'>{children}</main>
             <Footer />
           </div>
+          <ShippingRates />
         </CartProvider>
       </body>
     </html>

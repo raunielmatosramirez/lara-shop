@@ -6,7 +6,7 @@ import { tienda } from "@/lib/catalog";
 export const metadata: Metadata = {
   title: "Catálogo",
   description:
-    "Todas las camisetas de fútbol disponibles: temporada actual, retro y temporadas antiguas.",
+    "Todas las prendas de LaraShoping: vestidos ajustados, blusas, faldas, conjuntos y moda para hombre y niños.",
 };
 
 export default function CatalogoPage() {
@@ -15,20 +15,16 @@ export default function CatalogoPage() {
       <Container>
         <div className='mb-6 max-w-2xl'>
           <div className='flex items-center gap-2'>
-            <span
-              aria-hidden='true'
-              className='h-1 w-6 rounded-full bg-lc-rosa'
-            />
             <p className='text-[10px] font-semibold uppercase tracking-[0.22em] text-lc-rosa'>
               {tienda.nombre} · Catálogo
             </p>
           </div>
           <h1 className='mt-1.5 text-2xl font-bold tracking-tight sm:text-3xl'>
-            Todas las camisetas
+            Todas las prendas
           </h1>
           <p className='mt-2 text-xs leading-relaxed text-black/55 sm:text-sm'>
-            Temporada actual, diseños retro y camisetas de temporadas pasadas.
-            Filtra por categoría y elige tu talla.
+            Vestidos ajustados, blusas, faldas, conjuntos y moda para toda la
+            familia. Filtra por categoría y añade tus prendas favoritas.
           </p>
         </div>
 

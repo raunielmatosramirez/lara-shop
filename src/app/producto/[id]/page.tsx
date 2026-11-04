@@ -39,7 +39,7 @@ export default async function ProductoPage({ params }: ProductoPageProps) {
   }
 
   return (
-    <section className="py-8 sm:py-12 lg:py-16">
+    <section className='py-8 sm:py-12 lg:py-16'>
       <Container>
         <ProductDetail producto={producto} />
       </Container>

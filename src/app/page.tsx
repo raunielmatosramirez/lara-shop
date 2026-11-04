@@ -1,205 +1,70 @@
 "use client";
 
 import Link from "next/link";
+import { CatalogView } from "@/components/CatalogView";
 import { Container } from "@/components/Container";
-import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 import {
-  categorias,
-  contarProductosPorCategoria,
-  getProductosDestacados,
-  tienda,
-} from "@/lib/catalog";
+  IconArrowRight,
+  IconCheck,
+  IconRuler,
+  IconSparkles,
+  IconWhatsApp,
+} from "@/components/Icons";
+import { tienda } from "@/lib/catalog";
 
 export default function HomePage() {
-  const destacados = getProductosDestacados().slice(0, 4);
-
   return (
     <>
-      {/* HERO */}
-      <section className='bg-lc-blanco'>
+      {/* CATÁLOGO DIRECTO */}
+      <section className='bg-lc-blanco py-8 sm:py-12'>
         <Container>
-          <div className='grid min-h-[55vh] gap-10 py-12 md:grid-cols-2 md:items-center md:gap-12 md:py-16 lg:min-h-[65vh] lg:gap-16 lg:py-20'>
-            <div className='max-w-xl'>
-              {/* Franja deportiva rosada */}
-              <div className='flex items-center gap-3'>
-                <div
-                  aria-hidden='true'
-                  className='flex h-1.5 w-16 overflow-hidden rounded-full'
-                >
-                  <span className='h-full flex-1 bg-lc-rosa' />
-                  <span className='h-full flex-1 bg-lc-verde' />
-                  <span className='h-full flex-1 bg-lc-rosa' />
-                  <span className='h-full flex-1 bg-lc-verde' />
-                </div>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.22em] text-lc-verde sm:text-xs'>
-                  Fútbol · Todas las épocas
-                </p>
-              </div>
-
-              <h1 className='mt-6 text-balance text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl'>
-                <span className='text-lc-verde'>La</span>{" "}
-                <span className='text-lc-rosa'>Camiseta</span>
-              </h1>
-
-              <p className='mt-5 text-xl font-semibold text-lc-verde sm:text-2xl'>
-                {tienda.eslogan}
+          <div className='max-w-2xl'>
+            <div className='flex items-center gap-2'>
+              <p className='flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-lc-morado sm:text-xs'>
+                <IconSparkles className='h-3 w-3 text-lc-rosa' />
+                Nueva colección
               </p>
-
-              <p className='mt-4 max-w-lg text-sm leading-relaxed text-lc-negro/65 sm:text-base'>
-                {tienda.descripcion}. De la temporada actual a las camisetas que
-                marcaron una época, con un pedido sencillo por WhatsApp.
-              </p>
-
-              <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
-                <Link
-                  href='/catalogo'
-                  className='inline-flex min-h-10 items-center justify-center rounded-full bg-lc-verde px-6 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:scale-[1.02] hover:bg-lc-verde/90 hover:shadow-md active:scale-[0.98]'
-                >
-                  Ver catálogo completo
-                </Link>
-                <Link
-                  href='#categorias'
-                  className='inline-flex min-h-10 items-center justify-center rounded-full border border-lc-negro/15 bg-transparent px-6 text-sm font-semibold text-lc-negro transition-all duration-200 hover:scale-[1.02] hover:border-lc-verde hover:text-lc-verde active:scale-[0.98]'
-                >
-                  Explorar categorías
-                </Link>
-              </div>
-
-              <dl className='mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3'>
-                {[
-                  { dt: "Épocas", dd: "Todas las temporadas" },
-                  { dt: "Equipos", dd: "De todo el mundo" },
-                  { dt: "Pedido", dd: "Directo por WhatsApp" },
-                ].map((item) => (
-                  <div
-                    key={item.dt}
-                    className='rounded-xl bg-lc-blanco px-4 py-3 shadow-sm ring-1 ring-lc-negro/5 transition-shadow duration-200 hover:shadow-md'
-                  >
-                    <dt className='text-[10px] font-semibold uppercase tracking-[0.18em] text-lc-negro/45'>
-                      {item.dt}
-                    </dt>
-                    <dd className='mt-1 text-sm font-semibold'>{item.dd}</dd>
-                  </div>
-                ))}
-              </dl>
             </div>
 
-            {/* Imagen hero redondeada */}
-            <div className='relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-lc-verde/10 shadow-md md:aspect-auto md:h-full md:min-h-[480px]'>
-              <img
-                src='/images/hero.svg'
-                alt='Camisetas de fútbol de La Camiseta'
-                loading='lazy'
-                className='absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105'
-              />
-              <div className='absolute bottom-3 left-3 flex items-center gap-2 rounded-full bg-lc-verde/90 px-4 py-2 backdrop-blur-sm'>
-                <span
-                  aria-hidden='true'
-                  className='h-1.5 w-1.5 rounded-full bg-lc-rosa'
-                />
-                <p className='text-[10px] font-semibold uppercase tracking-[0.18em] text-white'>
-                  Todas las épocas · Todos los equipos
-                </p>
-              </div>
-            </div>
+            <h1 className='mt-4 text-4xl font-bold leading-none tracking-tight sm:text-5xl'>
+              <span className='text-lc-morado'>Lara</span>
+              <span className='text-lc-rosa'>Shoping</span>
+            </h1>
+
+            <p className='mt-3 text-sm font-semibold text-lc-morado sm:text-base'>
+              {tienda.eslogan}
+            </p>
+
+            <p className='mt-2 max-w-lg text-xs leading-relaxed text-black/55 sm:text-sm'>
+              {tienda.descripcion}. Elige tus prendas, añádelas al carrito y
+              solicita tu reserva por WhatsApp.
+            </p>
+
+            <ul className='mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-black/55 sm:text-[11px]'>
+              <li className='inline-flex items-center gap-1 rounded-full border border-lc-morado/10 bg-white px-2.5 py-1'>
+                <IconCheck className='h-3 w-3 text-lc-morado' />
+                Reserva por WhatsApp
+              </li>
+              <li className='inline-flex items-center gap-1 rounded-full border border-lc-morado/10 bg-white px-2.5 py-1'>
+                <IconRuler className='h-3 w-3 text-lc-rosa' />
+                Talla única · XS a M
+              </li>
+              <li className='inline-flex items-center gap-1 rounded-full border border-lc-morado/10 bg-white px-2.5 py-1'>
+                <IconSparkles className='h-3 w-3 text-lc-morado' />
+                Mujer, hombre y niños
+              </li>
+            </ul>
+          </div>
+
+          <div className='mt-7'>
+            <CatalogView />
           </div>
         </Container>
       </section>
 
-      {/* CATEGORÍAS */}
-      <section id='categorias' className='bg-lc-blanco py-12 sm:py-16'>
-        <Container>
-          <Reveal>
-            <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
-              <div>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.22em] text-lc-rosa'>
-                  Encuentra tu época
-                </p>
-                <h2 className='mt-1.5 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl'>
-                  Explora por categoría
-                </h2>
-              </div>
-              <Link
-                href='/catalogo'
-                className='inline-flex min-h-8 items-center text-sm font-semibold text-lc-verde underline-offset-4 transition-colors hover:underline'
-              >
-                Ver todo el catálogo →
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className='mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4'>
-            {categorias.map((categoria, indice) => (
-              <Reveal key={categoria.id} delay={indice * 80}>
-                <Link
-                  href={`/catalogo#${categoria.id}`}
-                  className='group flex items-center justify-between gap-3 rounded-xl bg-white px-4 py-3.5 shadow-sm ring-1 ring-lc-negro/5 transition-colors duration-200 hover:ring-lc-verde/30'
-                >
-                  <div className='flex min-w-0 items-center gap-3'>
-                    <span className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lc-rosa/10 text-[11px] font-bold text-lc-rosa'>
-                      {String(indice + 1).padStart(2, "0")}
-                    </span>
-                    <div className='min-w-0'>
-                      <h3 className='truncate text-sm font-semibold tracking-tight transition-colors duration-200 group-hover:text-lc-verde'>
-                        {categoria.nombre}
-                      </h3>
-                      <p className='text-[11px] text-lc-negro/45'>
-                        {contarProductosPorCategoria(categoria.id)} productos
-                      </p>
-                    </div>
-                  </div>
-                  <span
-                    aria-hidden='true'
-                    className='shrink-0 text-sm font-semibold text-lc-verde'
-                  >
-                    →
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* DESTACADOS */}
-      <section className='bg-lc-blanco py-12 sm:py-16'>
-        <Container>
-          <Reveal>
-            <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
-              <div>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.22em] text-lc-rosa'>
-                  Selección de la casa
-                </p>
-                <h2 className='mt-1.5 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl'>
-                  Camisetas destacadas
-                </h2>
-              </div>
-              <Link
-                href='/catalogo'
-                className='inline-flex min-h-8 items-center text-sm font-semibold text-lc-verde underline-offset-4 transition-colors hover:underline'
-              >
-                Ver catálogo completo →
-              </Link>
-            </div>
-          </Reveal>
-
-          <div className='mt-6 grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-4'>
-            {destacados.map((producto, indice) => (
-              <Reveal
-                key={producto.id}
-                delay={indice * 80}
-                className={indice >= 2 ? "hidden md:block" : ""}
-              >
-                <ProductCard producto={producto} />
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* CÓMO FUNCIONA */}
-      <section id='como-funciona' className='bg-lc-blanco py-12 sm:py-16'>
+      {/* CÓMO COMPRAR */}
+      <section id='como-funciona' className='bg-lc-rosa/5 py-12 sm:py-16'>
         <Container>
           <Reveal>
             <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
@@ -208,22 +73,25 @@ export default function HomePage() {
                   Sencillo y directo
                 </p>
                 <h2 className='mt-1.5 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl'>
-                  Cómo hacer tu pedido
+                  Cómo comprar por WhatsApp
                 </h2>
               </div>
-              <p className='max-w-xs text-xs leading-relaxed text-lc-negro/55 sm:text-right sm:text-sm'>
-                Sin registros ni pagos online. El pedido llega directamente por
-                WhatsApp.
-              </p>
+              <Link
+                href='/carrito'
+                className='inline-flex min-h-8 items-center gap-1.5 pb-0.5 text-sm font-semibold text-lc-morado transition-colors hover:text-lc-rosa'
+              >
+                Ver mi carrito
+                <IconArrowRight className='h-4 w-4' />
+              </Link>
             </div>
           </Reveal>
 
           <div className='mt-6 grid gap-3 sm:grid-cols-3 sm:gap-4'>
             {[
               {
-                titulo: "Elige tus camisetas",
+                titulo: "1. Elige tus prendas",
                 texto:
-                  "Explora el catálogo por temporada, equipo o época y selecciona tu talla.",
+                  "Filtra por categoría y añade al carrito las prendas que te gusten.",
                 icono: (
                   <svg
                     aria-hidden='true'
@@ -240,9 +108,9 @@ export default function HomePage() {
                 ),
               },
               {
-                titulo: "Revisa el carrito",
+                titulo: "2. Revisa el carrito",
                 texto:
-                  "Ajusta cantidades, elimina lo que no quieras y comprueba el total.",
+                  "Comprueba las prendas, las cantidades y el total de tu pedido.",
                 icono: (
                   <svg
                     aria-hidden='true'
@@ -260,9 +128,9 @@ export default function HomePage() {
                 ),
               },
               {
-                titulo: "Envía por WhatsApp",
+                titulo: "3. Envía por WhatsApp",
                 texto:
-                  "Genera el pedido y confirma el envío desde tu propia aplicación.",
+                  "Genera la solicitud de reserva y confírmala desde tu propia aplicación. El pago y el envío se acuerdan en el chat.",
                 icono: (
                   <svg
                     aria-hidden='true'
@@ -276,7 +144,7 @@ export default function HomePage() {
               },
             ].map((paso, indice) => (
               <Reveal key={paso.titulo} delay={indice * 80}>
-                <div className='flex h-full items-start gap-3 rounded-xl bg-white p-4 shadow-sm ring-1 ring-lc-negro/5'>
+                <div className='flex h-full items-start gap-3 overflow-hidden rounded-xl bg-white p-4 shadow-sm ring-1 ring-lc-morado/5'>
                   <span className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lc-rosa/10 text-lc-rosa'>
                     {paso.icono}
                   </span>
@@ -284,45 +152,13 @@ export default function HomePage() {
                     <h3 className='text-sm font-semibold leading-snug'>
                       {paso.titulo}
                     </h3>
-                    <p className='mt-1 text-xs leading-relaxed text-lc-negro/55'>
+                    <p className='mt-1 text-xs leading-relaxed text-black/55'>
                       {paso.texto}
                     </p>
                   </div>
                 </div>
               </Reveal>
             ))}
-          </div>
-        </Container>
-      </section>
-      {/* CTA FINAL */}
-      {/* CTA FINAL */}
-      <section className='bg-lc-verde py-12 sm:py-16'>
-        <Container>
-          <div className='flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between'>
-            <div className='max-w-xl'>
-              <div className='flex items-center gap-3'>
-                <span
-                  aria-hidden='true'
-                  className='h-1 w-8 rounded-full bg-lc-rosa'
-                />
-                <p className='text-[10px] font-semibold uppercase tracking-[0.22em] text-lc-rosa'>
-                  Tu historia, tu equipo
-                </p>
-              </div>
-              <h2 className='mt-2 text-xl font-bold tracking-tight text-white sm:text-2xl lg:text-3xl'>
-                ¿Buscas una camiseta concreta?
-              </h2>
-              <p className='mt-2 text-sm leading-relaxed text-white/70'>
-                Cuéntanos qué equipo y qué temporada buscas. Te ayudamos a
-                encontrarla y a cerrar el pedido por WhatsApp.
-              </p>
-            </div>
-            <Link
-              href='/catalogo'
-              className='inline-flex min-h-10 shrink-0 items-center justify-center rounded-full bg-lc-rosa px-6 text-sm font-semibold text-lc-negro transition-colors duration-200 hover:bg-lc-rosa/90'
-            >
-              Empezar a elegir
-            </Link>
           </div>
         </Container>
       </section>

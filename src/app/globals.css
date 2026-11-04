@@ -12,18 +12,11 @@
   }
 
   ::selection {
-    @apply bg-lc-rosa text-lc-negro;
+    @apply bg-lc-rosa text-white;
   }
 
   :focus-visible {
-    outline: 2px solid #1b3a2f;
+    outline: 2px solid #4c1d95;
     outline-offset: 2px;
-  }
-
-  button,
-  input,
-  select,
-  textarea {
-    border-radius: 0;
   }
 }

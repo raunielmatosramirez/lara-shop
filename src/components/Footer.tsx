@@ -1,6 +1,14 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
-import { categorias, tienda } from "@/lib/catalog";
+import {
+  IconBag,
+  IconChat,
+  IconHanger,
+  IconHeart,
+  IconHome,
+  IconWhatsApp,
+} from "@/components/Icons";
+import { tienda } from "@/lib/catalog";
 import { obtenerNumeroWhatsApp } from "@/lib/env";
 
 export function Footer() {
@@ -8,105 +16,82 @@ export function Footer() {
   const enlaceWhatsApp = numero ? `https://wa.me/${numero}` : "/carrito";
   const anio = new Date().getFullYear();
 
+  const enlaces = [
+    { href: "/", label: "Inicio", Icono: IconHome },
+    { href: "/catalogo", label: "Catálogo", Icono: IconHanger },
+    { href: "/carrito", label: "Mi carrito", Icono: IconBag },
+    { href: "/#como-funciona", label: "Cómo comprar", Icono: IconChat },
+  ];
+
   return (
-    <footer className='mt-auto bg-lc-verde text-lc-blanco'>
-      <Container>
-        <div className='grid gap-6 py-8 sm:grid-cols-2 sm:gap-8 lg:grid-cols-4 lg:gap-6'>
-          {/* Marca */}
-          <div className='sm:col-span-2 lg:col-span-1'>
-            <div className='flex items-center gap-2.5'>
-              <span className='text-base font-bold tracking-tight'>
-                {tienda.nombre}
-              </span>
+    <footer className='mt-auto bg-lc-morado text-lc-blanco'>
+      <div className='bg-gradient-to-b from-black/20 to-transparent'>
+        <Container>
+          <div className='grid grid-cols-1 gap-8 py-12 md:grid-cols-3 md:gap-12'>
+            {/* Columna 1: Marca y descripción */}
+            <div className='flex flex-col gap-4'>
+              <Link href='/' className='flex items-center w-fit group'>
+                {/* Icono redondeado */}
+                <div className='relative z-0 flex h-12 w-12 items-center justify-center rounded-full bg-lc-rosa/15 transition-colors group-hover:bg-lc-rosa/25'>
+                  <IconHanger className='h-6 w-6 text-lc-rosa' />
+                </div>
+
+                {/* Texto del logo superpuesto */}
+                <span className='relative z-10 -ml-3 text-lg font-bold tracking-tight'>
+                  <span className='text-white'>Lara</span>
+                  <span className='text-lc-rosa'>Shoping</span>
+                </span>
+              </Link>
+              <p className='text-sm leading-relaxed text-white/70 max-w-xs'>
+                {tienda.descripcion}. {tienda.eslogan}
+              </p>
             </div>
-            <p className='mt-3 max-w-xs text-xs leading-relaxed text-white/65'>
-              {tienda.descripcion}. Encuentra tu equipo, tu temporada y tu
-              historia.
-            </p>
-            <p className='mt-3 text-[10px] uppercase tracking-[0.2em] text-lc-rosa'>
-              {tienda.eslogan}
-            </p>
-          </div>
 
-          {/* Navegación */}
-          <div>
-            <h2 className='text-[10px] font-semibold uppercase tracking-[0.2em] text-lc-rosa'>
-              Navegación
-            </h2>
-            <ul className='mt-2.5 space-y-0.5'>
-              <li>
-                <Link
-                  href='/'
-                  className='inline-flex min-h-8 items-center text-xs text-white/75 transition-colors hover:text-lc-rosa focus-visible:outline-lc-rosa'
-                >
-                  Inicio
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='/catalogo'
-                  className='inline-flex min-h-8 items-center text-xs text-white/75 transition-colors hover:text-lc-rosa focus-visible:outline-lc-rosa'
-                >
-                  Catálogo completo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='/carrito'
-                  className='inline-flex min-h-8 items-center text-xs text-white/75 transition-colors hover:text-lc-rosa focus-visible:outline-lc-rosa'
-                >
-                  Mi carrito
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Categorías */}
-          <div>
-            <h2 className='text-[10px] font-semibold uppercase tracking-[0.2em] text-lc-rosa'>
-              Categorías
-            </h2>
-            <ul className='mt-2.5 space-y-0.5'>
-              {categorias.map((categoria) => (
-                <li key={categoria.id}>
+            {/* Columna 2: Enlaces de navegación */}
+            <div>
+              <h3 className='text-sm font-semibold uppercase tracking-wider text-white/90 mb-4'>
+                Navegación
+              </h3>
+              <nav
+                aria-label='Navegación del pie'
+                className='flex flex-col gap-3'
+              >
+                {enlaces.map((enlace) => (
                   <Link
-                    href={`/catalogo#${categoria.id}`}
-                    className='inline-flex min-h-8 items-center text-xs text-white/75 transition-colors hover:text-lc-rosa focus-visible:outline-lc-rosa'
+                    key={enlace.href}
+                    href={enlace.href}
+                    className='group flex items-center gap-2.5 text-sm text-white/65 transition-colors hover:text-lc-rosa w-fit'
                   >
-                    {categoria.nombre}
+                    <enlace.Icono className='h-4 w-4 text-white/40 transition-colors group-hover:text-lc-rosa' />
+                    {enlace.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </nav>
+            </div>
+
+            {/* Columna 3: Contacto y WhatsApp */}
+            <div className='flex flex-col gap-4 md:items-end'>
+              <h3 className='text-sm font-semibold uppercase tracking-wider text-white/90 md:text-right'>
+                ¿Tienes dudas?
+              </h3>
+              <p className='text-sm text-white/65 md:text-right'>
+                Estamos aquí para ayudarte a elegir tu look perfecto.
+              </p>
+              <a
+                href={enlaceWhatsApp}
+                target={numero ? "_blank" : undefined}
+                rel={numero ? "noopener noreferrer" : undefined}
+                className='inline-flex min-h-[36px] w-fit items-center gap-1.5 rounded-full bg-lc-rosa px-4 text-xs font-semibold text-white shadow-md shadow-lc-rosa/20 transition-colors hover:bg-lc-rosa/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lc-rosa md:ml-auto'
+              >
+                <IconWhatsApp className='h-3.5 w-3.5' />
+                Escríbenos por WhatsApp
+              </a>
+            </div>
           </div>
 
-          {/* Pedidos */}
-          <div>
-            <h2 className='text-[10px] font-semibold uppercase tracking-[0.2em] text-lc-rosa'>
-              Pedidos
-            </h2>
-            <p className='mt-2.5 text-xs leading-relaxed text-white/65'>
-              El pago y el envío se acuerdan directamente por WhatsApp.
-            </p>
-            <a
-              href={enlaceWhatsApp}
-              target={numero ? "_blank" : undefined}
-              rel={numero ? "noopener noreferrer" : undefined}
-              className='mt-3 inline-flex min-h-9 items-center rounded-full border border-white/30 px-4 text-xs font-semibold text-white transition-colors hover:border-lc-rosa hover:bg-lc-rosa hover:text-lc-negro focus-visible:outline-lc-rosa'
-            >
-              Escríbenos por WhatsApp
-            </a>
-          </div>
-        </div>
-
-        {/* Barra inferior */}
-        <div className='flex flex-col gap-2 border-t border-white/15 py-4 text-[11px] text-white/50 sm:flex-row sm:items-center sm:justify-between'>
-          <p>
-            © {anio} {tienda.nombre}. Todos los derechos reservados.
-          </p>
-          <p>Catálogo sin afiliación oficial a clubes ni marcas deportivas.</p>
-        </div>
-      </Container>
+          <div className='h-px w-full bg-white/10' />
+        </Container>
+      </div>
     </footer>
   );
 }

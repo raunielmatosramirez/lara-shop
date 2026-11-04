@@ -43,20 +43,13 @@ export function construirMensajePedido(items: CartItem[], simbolo: string): stri
     }
 
     const subtotal = formatearPrecio(producto.precio * item.cantidad, simbolo);
-    const detalles = [
-      item.talla ? `Talla ${item.talla}` : null,
-      item.dorsal ? `Dorsal ${item.dorsal}` : null,
-    ]
-      .filter(Boolean)
-      .join(" · ");
-    const variantes = detalles ? ` (${detalles})` : "";
 
-    return [`- ${item.cantidad}x ${producto.nombre}${variantes} — ${subtotal}`];
+    return [`- ${item.cantidad}x ${producto.nombre} — ${subtotal}`];
   });
 
   const total = formatearPrecio(calcularTotal(items), simbolo);
 
-  return `Hola, quiero hacer el siguiente pedido:\n\n${lineas.join("\n")}\n\nTotal: ${total}`;
+  return `Hola, me gustaría reservar las siguientes prendas:\n\n${lineas.join("\n")}\n\nTotal: ${total}\n\n¿Me confirmáis si todavía quedan disponibles? Gracias.`;
 }
 
 export function construirEnlaceWhatsApp(numero: string, mensaje: string): string {

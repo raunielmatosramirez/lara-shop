@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 
 export const metadata: Metadata = {
   title: "Carrito",
-  description: "Revisa tus camisetas y genera el pedido por WhatsApp.",
+  description: "Revisa tus prendas y solicita la reserva por WhatsApp.",
 };
 
 export default function CarritoPage() {
@@ -19,8 +19,8 @@ export default function CarritoPage() {
             Carrito
           </h1>
           <p className='mt-2 text-xs leading-relaxed text-black/55 sm:text-sm'>
-            Revisa las tallas y cantidades. Cuando esté listo, genera el pedido
-            y envíalo por WhatsApp.
+            Revisa tus prendas y cantidades. Cuando esté listo, solicita la
+            reserva por WhatsApp.
           </p>
         </div>
 

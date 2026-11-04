@@ -501,7 +501,7 @@
       "categoria": "vestidos",
       "imagenes": ["/fotos/30.jpeg"],
       "destacado": true,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-31",
@@ -715,7 +715,8 @@
       "precio": 4600,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/52.jpeg"],
-      "destacado": false
+      "destacado": false,
+      "activo": false
     },
     {
       "id": "prod-053",

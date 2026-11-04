@@ -2,11 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
-import {
-  IconArrowRight,
-  IconGrid,
-  IconoCategoria,
-} from "@/components/Icons";
+import { IconArrowRight, IconGrid, IconoCategoria } from "@/components/Icons";
 import {
   categorias,
   contarProductosPorCategoria,
@@ -24,10 +20,7 @@ export function CatalogView() {
     const aplicarHash = () => {
       const hash = window.location.hash.replace("#", "");
 
-      if (
-        hash === DESTACADOS ||
-        categorias.some((item) => item.id === hash)
-      ) {
+      if (hash === DESTACADOS || categorias.some((item) => item.id === hash)) {
         setCategoriaActiva(hash);
         return;
       }

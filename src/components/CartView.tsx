@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { useCart } from "@/components/CartProvider";
 import {
   IconArrowLeft,
@@ -27,11 +28,16 @@ import {
 
 export function CartView() {
   const { items, hydrated, actualizarCantidad, eliminarItem } = useCart();
+  const [nombrePedido, setNombrePedido] = useState("");
   const lineas = obtenerLineasPedido(items);
   const total = calcularTotal(items);
   const numeroWhatsApp = obtenerNumeroWhatsApp();
   const direccionRecogida = obtenerDireccionRecogida();
-  const mensaje = construirMensajePedido(items, tienda.simboloMoneda);
+  const mensaje = construirMensajePedido(
+    items,
+    tienda.simboloMoneda,
+    nombrePedido,
+  );
   const enlacePedido = numeroWhatsApp
     ? construirEnlaceWhatsApp(numeroWhatsApp, mensaje)
     : null;
@@ -244,7 +250,25 @@ export function CartView() {
           ) : null}
         </div>
 
-        <p className='text-[11px] leading-relaxed text-black/55'>
+        <div className='mt-3'>
+          <label
+            htmlFor='nombre-pedido'
+            className='text-[10px] font-semibold uppercase tracking-[0.14em] text-black/60'
+          >
+            Nombre para identificar el pedido
+          </label>
+          <input
+            id='nombre-pedido'
+            type='text'
+            value={nombrePedido}
+            onChange={(evento) => setNombrePedido(evento.target.value)}
+            placeholder='Maria hernandez, pedido graduación…'
+            maxLength={80}
+            className='mt-1 w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm text-black outline-none transition-colors placeholder:text-black/35 focus:border-lc-morado focus:ring-1 focus:ring-lc-morado'
+          />
+        </div>
+
+        <p className='mt-3 text-[11px] leading-relaxed text-black/55'>
           El pago y el envío se acuerdan directamente por WhatsApp. Al pulsar el
           botón se abrirá tu aplicación con la solicitud de reserva ya escrita.
         </p>

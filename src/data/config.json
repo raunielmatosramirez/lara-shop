@@ -361,13 +361,13 @@
       "categoria": "vestidos",
       "imagenes": ["/fotos/16.jpeg"],
       "destacado": true,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-17",
       "nombre": "Vestido Corto Halter Lila",
       "descripcion": "Un vestido corto y coqueto en un vibrante tono lila. Presenta un diseño halter con cuello alto y un lazo anudado en la parte trasera. La falda tiene un corte en vuelo (tipo skater) que aporta movimiento, mientras que la parte superior se ajusta a la figura. Ideal para fiestas, graduaciones o eventos de día.",
-      "precio": 39.99,
+      "precio": 4200.0,
       "categoria": "vestidos",
       "imagenes": ["/fotos/17.jpeg"],
       "destacado": false,
@@ -560,7 +560,7 @@
       "precio": 59.99,
       "categoria": "conjuntos",
       "imagenes": ["/fotos/36.jpeg"],
-      "destacado": true,
+      "destacado": false,
       "activo": true
     },
     {
@@ -694,7 +694,7 @@
       "id": "prod-050",
       "nombre": "Vestido largo ajustado lila",
       "descripcion": "Vestido maxi de tirantes finos en color lila con escote redondo y silueta ajustada. Suavidad y elegancia en una sola pieza.",
-      "precio": 45.9,
+      "precio": 4200.0,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/50.jpeg"],
       "destacado": false
@@ -703,7 +703,7 @@
       "id": "prod-051",
       "nombre": "Vestido largo azul con abertura",
       "descripcion": "Vestido maxi de cuello redondo sin mangas en color azul rey, con abertura lateral alta. Un look vibrante y moderno.",
-      "precio": 46.9,
+      "precio": 4600.0,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/51.jpeg"],
       "destacado": true

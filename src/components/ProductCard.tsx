@@ -27,9 +27,9 @@ export function ProductCard({ producto }: { producto: Producto }) {
         {producto.destacado ? (
           <span
             aria-label='Producto destacado'
-            className='absolute left-1 top-1 flex h-4 w-4 items-center justify-center rounded-full border border-lc-rosa bg-white/90 text-lc-rosa shadow-sm'
+            className='absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full border-2 border-amber-500 bg-white/90 text-amber-500 shadow-sm'
           >
-            <IconStar className='h-2.5 w-2.5' />
+            <IconStar className='h-4 w-4' />
           </span>
         ) : null}
         <span className='absolute right-1 top-1 inline-flex items-center rounded-full bg-white/90 px-1.5 py-0.5 text-[7px] font-semibold uppercase tracking-[0.05em] text-lc-morado shadow-sm sm:text-[8px]'>

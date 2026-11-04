@@ -34,7 +34,11 @@ export function calcularTotal(items: CartItem[]): number {
 }
 
 // Genera el texto exacto que se enviará por WhatsApp, con una línea por producto.
-export function construirMensajePedido(items: CartItem[], simbolo: string): string {
+export function construirMensajePedido(
+  items: CartItem[],
+  simbolo: string,
+  nombrePedido?: string,
+): string {
   const lineas = items.flatMap((item) => {
     const producto = getProducto(item.productoId);
 
@@ -48,8 +52,11 @@ export function construirMensajePedido(items: CartItem[], simbolo: string): stri
   });
 
   const total = formatearPrecio(calcularTotal(items), simbolo);
+  const identificador = nombrePedido?.trim()
+    ? `\n\nNombre del pedido: ${nombrePedido.trim()}`
+    : "";
 
-  return `Hola, me gustaría reservar las siguientes prendas:\n\n${lineas.join("\n")}\n\nTotal: ${total}\n\n¿Me confirmáis si todavía quedan disponibles? Gracias.`;
+  return `Hola, me gustaría reservar las siguientes prendas:\n\n${lineas.join("\n")}\n\nTotal: ${total}${identificador}\n\n¿Me confirmáis si todavía quedan disponibles? Gracias.`;
 }
 
 export function construirEnlaceWhatsApp(numero: string, mensaje: string): string {

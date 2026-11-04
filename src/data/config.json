@@ -4,7 +4,7 @@
     "descripcion": "Moda para mujer, hombre y niños",
     "eslogan": "Tu estilo, tus reglas.",
     "whatsapp": "5353870129",
-    "hosting": "https://larashop.vercel.app",
+    "hosting": "https://lara-shop-jet.vercel.app/",
     "moneda": "CUP",
     "simboloMoneda": "CUP"
   },
@@ -121,7 +121,10 @@
       {
         "nombre": "San Miguel del Padrón",
         "tarifas": [
-          { "zona": "Parque de la Virgen del Camino (no alrededores)", "precio": 1000 },
+          {
+            "zona": "Parque de la Virgen del Camino (no alrededores)",
+            "precio": 1000
+          },
           { "zona": "Reparto Núñez", "precio": 1200 },
           { "zona": "Ciudamar", "precio": 1200 },
           { "zona": "Diezmero", "precio": 1200 },

@@ -321,7 +321,7 @@
       "categoria": "conjuntos",
       "imagenes": ["/fotos/12.jpeg"],
       "destacado": true,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-13",
@@ -331,7 +331,7 @@
       "categoria": "vestidos",
       "imagenes": ["/fotos/13.jpeg"],
       "destacado": false,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-14",
@@ -421,7 +421,7 @@
       "categoria": "conjuntos",
       "imagenes": ["/fotos/22.jpeg"],
       "destacado": true,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-23",
@@ -451,7 +451,7 @@
       "categoria": "ropa-deportiva-hombre",
       "imagenes": ["/fotos/25.jpeg"],
       "destacado": false,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-26",
@@ -541,7 +541,7 @@
       "categoria": "vestidos",
       "imagenes": ["/fotos/34.jpeg"],
       "destacado": true,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-35",
@@ -561,7 +561,7 @@
       "categoria": "conjuntos",
       "imagenes": ["/fotos/36.jpeg"],
       "destacado": false,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-37",
@@ -706,7 +706,8 @@
       "precio": 4600.0,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/51.jpeg"],
-      "destacado": true
+      "destacado": true,
+      "activo": false
     },
     {
       "id": "prod-052",
@@ -716,7 +717,7 @@
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/52.jpeg"],
       "destacado": false,
-      "activo": true
+      "activo": false
     },
     {
       "id": "prod-053",
@@ -753,7 +754,8 @@
       "precio": 4400,
       "categoria": "conjuntos",
       "imagenes": ["/fotos/56.jpeg"],
-      "destacado": true
+      "destacado": true,
+      "activo": false
     },
     {
       "id": "prod-057",
@@ -762,7 +764,8 @@
       "precio": 4600,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/57.jpeg"],
-      "destacado": false
+      "destacado": false,
+      "activo": true
     },
     {
       "id": "prod-058",
@@ -771,7 +774,8 @@
       "precio": 4600,
       "categoria": "vestidos-ajustados",
       "imagenes": ["/fotos/58.jpeg"],
-      "destacado": true
+      "destacado": true,
+      "activo": false
     },
     {
       "id": "prod-059",

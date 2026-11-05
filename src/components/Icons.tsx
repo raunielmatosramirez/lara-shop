@@ -244,6 +244,14 @@ export function IconClose({ className = "h-4 w-4" }: IconProps) {
     </svg>
   );
 }
+export function IconClock({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <circle cx='12' cy='12' r='9' />
+      <path d='M12 7v5l3 2' />
+    </svg>
+  );
+}
 
 export function IconoCategoria({
   id,

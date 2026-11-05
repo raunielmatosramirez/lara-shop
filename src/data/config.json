@@ -910,6 +910,126 @@
       "tela": "Malla",
       "imagenes": ["/fotos/73.jpeg"],
       "destacado": false
+    },
+    {
+      "id": "prod-074",
+      "nombre": "Sudadera con estampado Brooklyn blanca",
+      "descripcion": "Sudadera de manga larga en color blanco con cuello redondo y estampado 'Brooklyn New York' en negro. Un básico urbano y cómodo.",
+      "precio": 4200,
+      "categoria": "hombre",
+      "tela": "Algodón",
+      "imagenes": ["/fotos/74.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-075",
+      "nombre": "Sudadera con estampado Brooklyn negra",
+      "descripcion": "Sudadera de manga larga en color negro con cuello redondo y estampado 'Brooklyn New York' en blanco. Estilo deportivo y versátil.",
+      "precio": 4200,
+      "categoria": "hombre",
+      "tela": "Algodón",
+      "imagenes": ["/fotos/75.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-076",
+      "nombre": "Conjunto de top y pantalón azul rey",
+      "descripcion": "Conjunto de dos piezas en azul rey con crop top de manga corta y cuello redondo, y pantalón de campana ajustado. Un look moderno y favorecedor.",
+      "precio": 4400,
+      "categoria": "conjuntos",
+      "tela": "Elastano",
+      "imagenes": ["/fotos/76.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-077",
+      "nombre": "Vestido corto palabra de honor rosa",
+      "descripcion": "Vestido corto ajustado en color rosa palo con cuello palabra de honor y bajo con volante. Un diseño femenino y elegante.",
+      "precio": 3800,
+      "categoria": "vestidos-ajustados",
+      "tela": "Punto acanalado",
+      "imagenes": ["/fotos/77.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-078",
+      "nombre": "Vestido corto burdeos off-shoulder",
+      "descripcion": "Vestido mini ajustado en color burdeos. Escote palabra de honor y bajo con volante.",
+      "precio": 3800,
+      "categoria": "vestidos-ajustados",
+      "tela": "Elastano",
+      "imagenes": ["/fotos/78.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-079",
+      "nombre": "Vestido corto rojo off-shoulder",
+      "descripcion": "Vestido mini ajustado en color rojo. Escote palabra de honor y bajo con volante.",
+      "precio": 3800,
+      "categoria": "vestidos-ajustados",
+      "tela": "Elastano",
+      "imagenes": ["/fotos/79.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-080",
+      "nombre": "Vestido corto camel off-shoulder",
+      "descripcion": "Vestido mini ajustado en tono camel. Escote palabra de honor y bajo con volante.",
+      "precio": 3800,
+      "categoria": "vestidos-ajustados",
+      "tela": "Elastano",
+      "imagenes": ["/fotos/80.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-081",
+      "nombre": "Vestido corto azul off-shoulder",
+      "descripcion": "Vestido mini ajustado en azul eléctrico. Escote palabra de honor y bajo con volante.",
+      "precio": 3800,
+      "categoria": "vestidos-ajustados",
+      "tela": "Elastano",
+      "imagenes": ["/fotos/81.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-082",
+      "nombre": "Sudadera Brooklyn azul marino",
+      "descripcion": "Sudadera de manga larga en azul marino con estampado 'Brooklyn New York' en blanco. Cuello redondo y puños elásticos.",
+      "precio": 4200,
+      "categoria": "hombre",
+      "tela": "Algodón",
+      "imagenes": ["/fotos/82.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-083",
+      "nombre": "Vestido corto asimétrico camel",
+      "descripcion": "Vestido mini ajustado en tono camel. Escote asimétrico, manga corta, fruncido lateral y abertura con tira ajustable.",
+      "precio": 3600,
+      "categoria": "vestidos-ajustados",
+      "tela": "Canalé",
+      "imagenes": ["/fotos/83.jpeg"],
+      "destacado": false
+    },
+    {
+      "id": "prod-084",
+      "nombre": "Vestido corto asimétrico rojo",
+      "descripcion": "Vestido mini ajustado en color rojo. Escote asimétrico, manga corta, fruncido lateral y abertura con tira ajustable.",
+      "precio": 3600,
+      "categoria": "vestidos-ajustados",
+      "tela": "Canalé",
+      "imagenes": ["/fotos/84.jpeg"],
+      "destacado": true
+    },
+    {
+      "id": "prod-085",
+      "nombre": "Vestido corto asimétrico rosa",
+      "descripcion": "Vestido mini ajustado en color rosa. Escote asimétrico, manga corta, fruncido lateral y abertura con tira ajustable.",
+      "precio": 3600,
+      "categoria": "vestidos-ajustados",
+      "tela": "Canalé",
+      "imagenes": ["/fotos/85.jpeg"],
+      "destacado": false
     }
   ]
 }

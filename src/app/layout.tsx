@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     images: [
       {
         // 👇 CAMBIA ESTO: Debe apuntar a la imagen que REALMENTE existe en /public
-        url: "/imagenalink.jpeg",
+        url: "/img.jpeg",
         width: 1200,
         height: 630,
         alt: `Imagen de ${tienda.nombre}`,

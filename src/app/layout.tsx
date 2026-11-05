@@ -48,7 +48,7 @@ export const viewport: Viewport = {
 };
 
 // 👇 CONSTANTE DE CONTROL (cambia a false para desactivar el mantenimiento)
-const MOSTRAR_MANTENIMIENTO = false;
+const MOSTRAR_MANTENIMIENTO = true;
 
 // 👇 COMPONENTE DE MANTENIMIENTO
 function Mantenimiento() {

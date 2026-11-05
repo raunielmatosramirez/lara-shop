@@ -21,17 +21,17 @@ export const metadata: Metadata = {
     siteName: tienda.nombre,
     title: `${tienda.nombre} — ${tienda.descripcion}`,
     description: `${tienda.descripcion}. ${tienda.eslogan}`,
-    url: "/", // 👈 Añadido: URL relativa a la metadataBase
+    url: "/",
     images: [
       {
-        url: "/og-image.jpg", // 👈 Añadido: Ruta de la imagen en la carpeta public
+        // 👇 CAMBIA ESTO: Debe apuntar a la imagen que REALMENTE existe en /public
+        url: "/imagenalink.jpeg",
         width: 1200,
         height: 630,
         alt: `Imagen de ${tienda.nombre}`,
       },
     ],
   },
-  // 👇 Añadido: Configuración para Twitter (ayuda a la vista previa)
   twitter: {
     card: "summary_large_image",
     title: `${tienda.nombre} — ${tienda.descripcion}`,

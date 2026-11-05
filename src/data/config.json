@@ -1083,13 +1083,14 @@
     },
     {
       "id": "prod-091",
-      "nombre": "Vestido largo halter mostaza con abertura",
-      "descripcion": "Vestido largo en mostaza. Top halter con escote profundo y volante, falda ajustada con abertura lateral alta.",
+      "nombre": "Conjunto halter y pantalón rosa palo",
+      "descripcion": "Conjunto de dos piezas en rosa palo. Top halter con escote profundo y volante, pantalón de campana ajustado.",
       "precio": 5000,
-      "categoria": "vestidos-ajustados",
+      "categoria": "conjuntos",
       "tela": "Elastano",
       "imagenes": ["/fotos/91.jpeg"],
-      "destacado": true
+      "destacado": true,
+      "activo": true
     },
     {
       "id": "prod-092",
@@ -1103,23 +1104,25 @@
     },
     {
       "id": "prod-093",
-      "nombre": "Conjunto halter y pantalón azul rey",
-      "descripcion": "Conjunto de dos piezas en azul rey. Top halter con volante y escote profundo, pantalón de campana ajustado.",
+      "nombre": "Vestido corto halter salmón",
+      "descripcion": "Vestido mini en salmón. Top halter con escote profundo, espalda abierta y falda con vuelo.",
       "precio": 4500,
-      "categoria": "conjuntos",
-      "tela": "Elastano",
+      "categoria": "vestidos-ajustados",
+      "tela": "Poliéster",
       "imagenes": ["/fotos/93.jpeg"],
-      "destacado": true
+      "destacado": false,
+      "activo": true
     },
     {
       "id": "prod-094",
-      "nombre": "Vestido corto halter salmón",
-      "descripcion": "Vestido mini en salmón. Top halter con escote profundo, espalda abierta y falda con vuelo.",
-      "precio": 4700,
+      "nombre": "Vestido largo halter mostaza con abertura",
+      "descripcion": "Vestido largo en mostaza. Top halter con escote profundo y volante, falda ajustada con abertura lateral alta.",
+      "precio": 5000,
       "categoria": "vestidos-ajustados",
-      "tela": "Poliéster",
+      "tela": "Elastano",
       "imagenes": ["/fotos/94.jpeg"],
-      "destacado": false
+      "destacado": true,
+      "activo": true
     },
     {
       "id": "prod-095",

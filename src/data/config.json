@@ -1523,6 +1523,17 @@
       "imagenes": ["/fotos/132.jpeg"],
       "destacado": false,
       "activo": true
+    },
+    {
+      "id": "prod-133",
+      "nombre": "Conjunto off-shoulder y falda larga rosa palo",
+      "descripcion": "Conjunto de dos piezas en rosa palo. Top corto off-shoulder y falda larga ajustada con doble abertura frontal.",
+      "precio": 5000,
+      "categoria": "conjuntos",
+      "tela": "Elastano",
+      "imagenes": ["/fotos/133.jpeg"],
+      "destacado": true,
+      "activo": true
     }
   ]
 }

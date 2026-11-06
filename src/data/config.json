@@ -1308,231 +1308,221 @@
       "id": "prod-113",
       "nombre": "Vestido largo rojo con lazos",
       "descripcion": "Vestido largo ajustado en rojo. Escote corazón con fruncido, espalda abierta con tiras y lazos.",
-      "precio": 4800,
-      "categoria": "vestidos-ajustados",
-      "tela": "Canalé",
-      "imagenes": ["/fotos/113.jpeg"],
-      "destacado": true
-    },
-    {
-      "id": "prod-113",
-      "nombre": "Vestido largo rojo con lazos",
-      "descripcion": "Vestido largo ajustado en rojo. Escote corazón con fruncido, espalda abierta con tiras y lazos.",
-      "precio": 4800,
+      "precio": 5000,
       "categoria": "vestidos-ajustados",
       "tela": "Canalé",
       "imagenes": ["/fotos/113.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-114",
       "nombre": "Conjunto top y falda vino",
       "descripcion": "Conjunto de dos piezas en vino. Top corto de manga larga y falda midi ajustada con abertura lateral alta.",
-      "precio": 4600,
+      "precio": 4800,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/114.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-115",
       "nombre": "Conjunto top y falda rojo",
       "descripcion": "Conjunto de dos piezas en rojo. Top corto de manga larga y falda midi ajustada con abertura lateral alta.",
-      "precio": 4600,
+      "precio": 4800,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/115.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-116",
       "nombre": "Conjunto top y falda azul cielo",
       "descripcion": "Conjunto de dos piezas en azul cielo. Top corto con manga de volante y nudo frontal, falda midi con abertura.",
-      "precio": 4400,
+      "precio": 4700,
       "categoria": "conjuntos",
       "tela": "Elastano",
       "imagenes": ["/fotos/116.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-117",
       "nombre": "Conjunto top y falda rosa palo",
       "descripcion": "Conjunto de dos piezas en rosa palo. Top corto de manga larga y falda midi ajustada con abertura lateral alta.",
-      "precio": 4600,
+      "precio": 4800,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/117.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-118",
       "nombre": "Conjunto top y falda camel",
       "descripcion": "Conjunto de dos piezas en camel. Top corto con manga de volante y nudo frontal, falda midi con abertura.",
-      "precio": 4400,
+      "precio": 4700,
       "categoria": "conjuntos",
       "tela": "Elastano",
       "imagenes": ["/fotos/118.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-119",
       "nombre": "Conjunto top y falda rosa palo",
       "descripcion": "Conjunto de dos piezas en rosa palo. Top corto con manga de volante y nudo frontal, falda midi con abertura.",
-      "precio": 4400,
+      "precio": 4700,
       "categoria": "conjuntos",
       "tela": "Elastano",
       "imagenes": ["/fotos/119.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-120",
       "nombre": "Vestido corto camel de canalé",
       "descripcion": "Vestido mini ajustado en camel. Manga larga acampanada, escote redondo y bajo con vuelo.",
-      "precio": 3800,
+      "precio": 4500,
       "categoria": "vestidos-ajustados",
       "tela": "Canalé",
       "imagenes": ["/fotos/120.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-121",
       "nombre": "Vestido corto rosa palo de canalé",
       "descripcion": "Vestido mini ajustado en rosa palo. Manga larga acampanada, escote redondo y bajo con vuelo.",
-      "precio": 3800,
+      "precio": 4500,
       "categoria": "vestidos-ajustados",
       "tela": "Canalé",
       "imagenes": ["/fotos/121.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-122",
       "nombre": "Vestido corto rojo de canalé",
       "descripcion": "Vestido mini ajustado en rojo. Manga larga acampanada, escote redondo y bajo con vuelo.",
-      "precio": 3800,
+      "precio": 4500,
       "categoria": "vestidos-ajustados",
       "tela": "Canalé",
       "imagenes": ["/fotos/122.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-123",
       "nombre": "Conjunto top y falda salmón",
       "descripcion": "Conjunto de dos piezas en salmón. Top corto con manga de volante y nudo frontal, falda midi con abertura.",
-      "precio": 4400,
+      "precio": 4700,
       "categoria": "conjuntos",
       "tela": "Elastano",
       "imagenes": ["/fotos/123.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-124",
       "nombre": "Vestido corto camel con espalda abierta",
       "descripcion": "Vestido mini ajustado en camel. Tirantes finos con lazos, espalda abierta, fruncido lateral y bajo con volante.",
-      "precio": 3600,
+      "precio": 4100,
       "categoria": "vestidos-ajustados",
       "tela": "Elastano",
       "imagenes": ["/fotos/124.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-125",
       "nombre": "Vestido corto rosa palo con espalda abierta",
       "descripcion": "Vestido mini ajustado en rosa palo. Tirantes finos con lazos, espalda abierta, fruncido lateral y bajo con volante.",
-      "precio": 3600,
+      "precio": 4100,
       "categoria": "vestidos-ajustados",
       "tela": "Elastano",
       "imagenes": ["/fotos/125.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-126",
       "nombre": "Vestido corto salmón con espalda abierta",
       "descripcion": "Vestido mini ajustado en salmón. Tirantes finos con lazos, espalda abierta, fruncido lateral y bajo con volante.",
-      "precio": 3600,
+      "precio": 4100,
       "categoria": "vestidos-ajustados",
       "tela": "Elastano",
       "imagenes": ["/fotos/126.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-127",
       "nombre": "Vestido corto rosa con espalda abierta",
       "descripcion": "Vestido mini ajustado en rosa. Tirantes finos con lazos, espalda abierta, fruncido lateral y bajo con volante.",
-      "precio": 3600,
+      "precio": 4100,
       "categoria": "vestidos-ajustados",
       "tela": "Elastano",
       "imagenes": ["/fotos/127.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-128",
       "nombre": "Conjunto top y pantalón vino",
       "descripcion": "Conjunto de dos piezas en vino. Top corto de manga larga con nudo frontal y pantalón de campana ajustado.",
-      "precio": 4400,
+      "precio": 5000,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/128.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-129",
       "nombre": "Vestido corto celeste de canalé",
       "descripcion": "Vestido mini ajustado en celeste. Manga larga acampanada, escote redondo y bajo con vuelo.",
-      "precio": 3800,
+      "precio": 4500,
       "categoria": "vestidos-ajustados",
       "tela": "Canalé",
       "imagenes": ["/fotos/129.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-130",
       "nombre": "Conjunto top y pantalón azul rey",
       "descripcion": "Conjunto de dos piezas en azul rey. Top corto de manga larga con nudo frontal y pantalón de campana ajustado.",
-      "precio": 4400,
+      "precio": 5000,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/130.jpeg"],
       "destacado": true,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-131",
       "nombre": "Conjunto top y pantalón rosa palo",
       "descripcion": "Conjunto de dos piezas en rosa palo. Top corto de manga larga con nudo frontal y pantalón de campana ajustado.",
-      "precio": 4400,
+      "precio": 5000,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/131.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     },
     {
       "id": "prod-132",
       "nombre": "Conjunto top y pantalón rosa viejo",
       "descripcion": "Conjunto de dos piezas en rosa viejo. Top corto de manga larga con nudo frontal y pantalón de campana ajustado.",
-      "precio": 4400,
+      "precio": 5000,
       "categoria": "conjuntos",
       "tela": "Punto acanalado",
       "imagenes": ["/fotos/132.jpeg"],
       "destacado": false,
-      "activo": false
+      "activo": true
     }
   ]
 }

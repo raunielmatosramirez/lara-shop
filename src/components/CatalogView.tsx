@@ -13,8 +13,24 @@ import {
 const TODAS = "todas";
 const DESTACADOS = "destacados";
 
+function mezclar<T>(items: readonly T[]): T[] {
+  const copia = [...items];
+
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+
+  return copia;
+}
+
 export function CatalogView() {
   const [categoriaActiva, setCategoriaActiva] = useState(TODAS);
+  const [productosOrdenados, setProductosOrdenados] = useState(productos);
+
+  useEffect(() => {
+    setProductosOrdenados(mezclar(productos));
+  }, []);
 
   useEffect(() => {
     const aplicarHash = () => {
@@ -49,17 +65,17 @@ export function CatalogView() {
 
   const productosFiltrados = useMemo(() => {
     if (categoriaActiva === TODAS) {
-      return productos;
+      return productosOrdenados;
     }
 
     if (categoriaActiva === DESTACADOS) {
-      return getProductosDestacados();
+      return productosOrdenados.filter((producto) => producto.destacado);
     }
 
-    return productos.filter(
+    return productosOrdenados.filter(
       (producto) => producto.categoria === categoriaActiva,
     );
-  }, [categoriaActiva]);
+  }, [categoriaActiva, productosOrdenados]);
 
   const filtros = [
     { id: TODAS, nombre: "Todas", total: productos.length },
@@ -77,6 +93,19 @@ export function CatalogView() {
 
   return (
     <div>
+      {/* Encabezado de categorías */}
+      <div className='mb-2'>
+        <div className='flex items-center gap-1.5'>
+          <IconGrid className='h-3.5 w-3.5 text-lc-rosa' />
+          <p className='text-[10px] font-semibold uppercase tracking-[0.14em] text-lc-morado'>
+            Categorías
+          </p>
+        </div>
+        <p className='mt-1 text-[11px] leading-relaxed text-black/50'>
+          Explora por categoría y encuentra tu estilo.
+        </p>
+      </div>
+
       {/* Filtros en píldoras */}
       <div
         role='group'
